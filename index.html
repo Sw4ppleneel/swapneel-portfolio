@@ -141,23 +141,46 @@
   </section>
 
   <!-- Contact/Footer Section -->
-  <section class="contact" id="contact">
-    <h2>Let's Work Together</h2>
-    <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you!');">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <footer class="footer">
-      <div class="socials">
-        <a href="https://github.com/Sw4ppleneel" target="_blank"><img src="images/github.svg" alt="GitHub"></a>
-        <!-- Add more socials if needed -->
-      </div>
-      <div class="copy">
-        &copy; 2025 Swapneel. All rights reserved.
-      </div>
-    </footer>
-  </section>
+  <!-- ...other code... -->
+
+<!-- Contact/Footer Section -->
+<section class="contact" id="contact">
+  <h2>Let's Work Together</h2>
+  <form id="contact-form" class="contact-form">
+    <input type="text" name="from_name" placeholder="Your Name" required />
+    <input type="email" name="reply_to" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <footer class="footer">
+    <div class="socials">
+      <a href="https://github.com/Sw4ppleneel" target="_blank"><img src="images/github.svg" alt="GitHub"></a>
+      <!-- Add more socials if needed -->
+    </div>
+    <div class="copy">
+      &copy; 2025 Swapneel. All rights reserved.
+    </div>
+  </footer>
+</section>
+
+<!-- EmailJS integration script -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init('o4VcZnv04ibDliV65'); // Replace with your EmailJS Public Key
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_u9mhyyf', 'template_s9uok2m', this)
+      .then(function() {
+        alert('Message sent!');
+        document.getElementById('contact-form').reset();
+      }, function(error) {
+        alert('Failed to send: ' + JSON.stringify(error));
+      });
+  });
+</script>
 </body>
 </html>
+  
