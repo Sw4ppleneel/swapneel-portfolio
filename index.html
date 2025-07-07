@@ -2,18 +2,162 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Swapneel Portfolio</title>
+  <link href="style.css" rel="stylesheet">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="parabola-glow"></div>
-  <h1>Swapneel</h1>
-  <p></p>
-  Python • Data Science • Machine Learning • Competitive Programming”
-  <div class="custom-cursor"></div>
-  <script src="cursor.js"></script>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">SN</div>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="hireMeBtn">Hire Me</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <span class="intro">Hi, I'm Swapneel <span class="wave">👋</span></span>
+      <h1>Building clean code and creative solutions.</h1>
+      <p class="subtext">Python • Data Science • Machine Learning • Competitive Programming</p>
+      <div class="actions">
+        <a href="#projects" class="primaryBtn">View Projects</a>
+        <a href="resume.pdf" class="secondaryBtn" download>Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="images/profile-placeholder.png" alt="Swapneel" class="profileImg" />
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2>
+      Work That Speaks for Itself
+      <span class="lilacUnderline"></span>
+    </h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="images/project1-placeholder.jpg" alt="Project 1" class="thumb" />
+        <h3>AI Chatbot Platform</h3>
+        <p>Intelligent chatbot built with Python and transformers for seamless conversations.</p>
+        <a href="#" class="more">View More &rarr;</a>
+      </div>
+      <div class="project-card">
+        <img src="images/project2-placeholder.jpg" alt="Project 2" class="thumb" />
+        <h3>Data Visualizer</h3>
+        <p>Interactive dashboard for data analysis using HTML, CSS, and JS.</p>
+        <a href="#" class="more">View More &rarr;</a>
+      </div>
+      <div class="project-card">
+        <img src="images/project3-placeholder.jpg" alt="Project 3" class="thumb" />
+        <h3>Competitive Coding Toolkit</h3>
+        <p>CLI tools for algorithmic problem-solving in Python and C++.</p>
+        <a href="#" class="more">View More &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2>Tools & Technologies I Use</h2>
+    <div class="skills-grid">
+      <div class="skill"><img src="images/python.svg" alt="Python"><span>Python</span></div>
+      <div class="skill"><img src="images/javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+      <div class="skill"><img src="images/html.svg" alt="HTML"><span>HTML</span></div>
+      <div class="skill"><img src="images/css.svg" alt="CSS"><span>CSS</span></div>
+      <div class="skill"><img src="images/git.svg" alt="Git"><span>Git</span></div>
+      <div class="skill"><img src="images/vscode.svg" alt="VS Code"><span>VS Code</span></div>
+      <div class="skill"><img src="images/numpy.svg" alt="NumPy"><span>NumPy</span></div>
+      <div class="skill"><img src="images/pandas.svg" alt="Pandas"><span>pandas</span></div>
+      <div class="skill"><img src="images/sklearn.svg" alt="scikit-learn"><span>scikit-learn</span></div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-left">
+        <img src="images/profile-placeholder.png" alt="Swapneel" class="about-profilePic">
+      </div>
+      <div class="about-right">
+        <h2>About Me</h2>
+        <p>
+          Hi, I’m Swapneel! I’m passionate about building elegant solutions in data science, machine learning, and software engineering. My curiosity drives me to solve real-world problems and push my skills every day.<br><br>
+          I love collaborating with creative teams, sharing knowledge, and exploring new technologies. Currently, I’m learning advanced ML ops and contributing to open source.
+        </p>
+        <div class="milestones">
+          <div class="milestone"><span class="year">2025</span><span class="milestoneText">Started building open source ML tools</span></div>
+          <div class="milestone"><span class="year">2024</span><span class="milestoneText">Won national level coding competitions</span></div>
+          <div class="milestone"><span class="year">2023</span><span class="milestoneText">Interned at TechStartup as Data Scientist</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog" id="blog">
+    <h2>
+      Thoughts & Learnings
+      <span class="lilacUnderline"></span>
+    </h2>
+    <div class="blog-grid">
+      <a href="#" class="blog-card">
+        <img src="images/blog1-placeholder.jpg" alt="Blog 1" class="thumb" />
+        <div class="blog-content">
+          <span class="date">Jun 2025</span>
+          <h3>How I Approach Machine Learning Projects</h3>
+          <p>A breakdown of my typical workflow for tackling new ML problems, from ideation to deployment.</p>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <img src="images/blog2-placeholder.jpg" alt="Blog 2" class="thumb" />
+        <div class="blog-content">
+          <span class="date">May 2025</span>
+          <h3>Guide: Competitive Programming for Beginners</h3>
+          <p>Tips, resources, and mindsets that helped me excel in coding contests.</p>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <img src="images/blog3-placeholder.jpg" alt="Blog 3" class="thumb" />
+        <div class="blog-content">
+          <span class="date">Apr 2025</span>
+          <h3>My Favorite Python Libraries in 2025</h3>
+          <p>A rundown of the tools I use daily for data science, automation, and more.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact/Footer Section -->
+  <section class="contact" id="contact">
+    <h2>Let's Work Together</h2>
+    <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you!');">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <footer class="footer">
+      <div class="socials">
+        <a href="https://github.com/Sw4ppleneel" target="_blank"><img src="images/github.svg" alt="GitHub"></a>
+        <!-- Add more socials if needed -->
+      </div>
+      <div class="copy">
+        &copy; 2025 Swapneel. All rights reserved.
+      </div>
+    </footer>
+  </section>
 </body>
 </html>
-<!-- No additional HTML is needed at the $PLACEHOLDER$ in this context. 
-If you want to add more scripts or HTML, you can do so here. -->
