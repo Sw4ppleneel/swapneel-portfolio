@@ -1,4 +1,4 @@
-// Purple pixel distortion cursor trail effect
+// Amber pixel distortion cursor trail effect
 (function() {
   const canvas = document.createElement('canvas');
   canvas.id = 'cursor-canvas';
@@ -21,14 +21,14 @@
   const maxParticles = 80;
   const mouse = { x: -100, y: -100 };
 
-  // Purple color palette
-  const purples = [
-    'rgba(162, 89, 247, 0.9)',
-    'rgba(127, 56, 199, 0.85)',
-    'rgba(180, 120, 255, 0.8)',
-    'rgba(138, 43, 226, 0.85)',
-    'rgba(186, 85, 211, 0.8)',
-    'rgba(148, 0, 211, 0.75)',
+  // Amber / signal color palette (matches site theme)
+  const ambers = [
+    'rgba(232, 147, 12, 0.9)',
+    'rgba(179, 111, 4, 0.85)',
+    'rgba(245, 172, 48, 0.8)',
+    'rgba(200, 122, 8, 0.85)',
+    'rgba(255, 190, 92, 0.75)',
+    'rgba(178, 96, 0, 0.8)',
   ];
 
   class Particle {
@@ -38,7 +38,7 @@
       this.size = Math.random() * 8 + 4;
       this.speedX = (Math.random() - 0.5) * 3;
       this.speedY = (Math.random() - 0.5) * 3;
-      this.color = purples[Math.floor(Math.random() * purples.length)];
+      this.color = ambers[Math.floor(Math.random() * ambers.length)];
       this.life = 1;
       this.decay = Math.random() * 0.02 + 0.015;
       this.rotation = Math.random() * Math.PI * 2;
