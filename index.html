@@ -467,8 +467,14 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
     </div>
 
     <form id="contact-form" class="contact-form">
-      <input type="text" name="from_name" placeholder="Your name" required>
-      <input type="email" name="reply_to" placeholder="Your email" required>
+      <!-- Web3Forms: paste your free access key from https://web3forms.com (enter your email, key is mailed to you). -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="New message from your portfolio">
+      <input type="hidden" name="from_name" value="Portfolio contact form">
+      <!-- honeypot: hidden from humans, catches bots -->
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
       <textarea name="message" rows="4" placeholder="What are you building, and where might it break?" required></textarea>
       <button type="submit" id="send-btn">Send message</button>
       <p class="form-status" id="form-status" aria-live="polite"></p>
@@ -545,33 +551,60 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
 <!-- Cursor trail effect -->
 <script src="cursor.js"></script>
 
-<!-- EmailJS contact form -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<!-- Contact form: Web3Forms (delivers straight to inbox) with a mailto fallback -->
 <script>
 (function(){
-  emailjs.init('UrY-gYCg_PKD4enNm');
   const form = document.getElementById('contact-form');
   const btn = document.getElementById('send-btn');
   const status = document.getElementById('form-status');
+  const MY_EMAIL = 'swapneel.bit@gmail.com';
 
-  form.addEventListener('submit', function(e){
+  function setStatus(cls, msg){ status.className = 'form-status' + (cls ? ' ' + cls : ''); status.textContent = msg; }
+
+  // Last-resort path: open the visitor's mail client with the message pre-composed.
+  function mailtoFallback(data){
+    const subject = encodeURIComponent('Portfolio message from ' + (data.name || 'someone'));
+    const body = encodeURIComponent(
+      'From: ' + (data.name || '') + ' <' + (data.email || '') + '>\n\n' + (data.message || '')
+    );
+    window.location.href = 'mailto:' + MY_EMAIL + '?subject=' + subject + '&body=' + body;
+  }
+
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    const key = data.access_key;
+
+    // No real key configured yet → go straight to the visitor's email app so nothing is lost.
+    if(!key || key === 'YOUR_WEB3FORMS_KEY'){
+      setStatus('', '[ok] opening your email app…');
+      mailtoFallback(data);
+      return;
+    }
+
     btn.disabled = true;
     btn.textContent = 'Sending…';
-    status.className = 'form-status';
-    status.textContent = '';
-    emailjs.sendForm('service_u9mhyyf', 'template_6st5lmv', form).then(function(){
-      status.className = 'form-status ok';
-      status.textContent = "[ok] message delivered — I'll get back to you.";
-      form.reset();
+    setStatus('', '');
+    try{
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const out = await res.json();
+      if(out.success){
+        setStatus('ok', "[ok] message delivered — I'll get back to you.");
+        form.reset();
+      } else {
+        throw new Error(out.message || 'send failed');
+      }
+    } catch(err){
+      setStatus('err', '[fail] send failed — opening your email app as backup…');
+      mailtoFallback(data);
+    } finally {
       btn.disabled = false;
       btn.textContent = 'Send message';
-    }, function(){
-      status.className = 'form-status err';
-      status.textContent = '[fail] could not send — email me directly at swapneel.bit@gmail.com';
-      btn.disabled = false;
-      btn.textContent = 'Send message';
-    });
+    }
   });
 })();
 </script>
