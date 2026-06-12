@@ -398,7 +398,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
         <p>Multi-tenant school ERP: student records, fees (UPI deep links + QR), academics, and parent communication across three surfaces — public site, staff ERP, parent portal — on one SPA. Tenant isolation is enforced in middleware with <code style="font-family:'IBM Plex Mono',monospace;font-size:13px">tenant_id</code> on every table; every API route is role-checked across five roles; every state change emits an immutable audit event.</p>
         <div class="fail-note"><b>Failure-mode thinking</b>The most frequent failure in an Indian school isn't the server — it's the teacher's connectivity. Attendance is offline-first: writes queue in IndexedDB and background-sync on recovery. File uploads go direct to R2 via presigned URLs, so storage failures never touch the app server. Migrations are raw versioned SQL, because schemas holding fee records don't get ORM surprises.</div>
         <div class="stack"><span>FastAPI · Python 3.11</span><span>PostgreSQL + asyncpg</span><span>Preact + TypeScript</span><span>Docker Compose</span><span>nginx</span><span>Cloudflare + R2</span><span>Gunicorn/Uvicorn</span></div>
-        <div class="proj-links"><a href="#TULIPS_URL">Visit site ↗</a></div>
+        <div class="proj-links"><a href="https://tulipsedu.in" target="_blank" rel="noopener">Visit site ↗</a></div>
       </div>
     </article>
 
@@ -414,7 +414,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
         <p>Born from a real problem: dropped into a 107-table production database with no documentation as a research assistant. SxQLear crawls and semantically maps unfamiliar SQL databases — a multi-signal inference engine (structural, lexical, statistical, semantic) proposes join relationships with confidence scores, and schema memory accumulates per project.</p>
         <div class="fail-note"><b>Failure-mode thinking</b>Local-first by design: no cloud dependency, no data leaves the machine. Confidence scores instead of confident guesses — the tool says how sure it is.</div>
         <div class="stack"><span>Python</span><span>FastAPI</span><span>React</span><span>Embeddings</span><span>Schema inference</span><span>SQLAlchemy</span></div>
-        <div class="proj-links"><a href="#SXQLEAR_REPO">GitHub ↗</a></div>
+        <div class="proj-links"><a href="https://github.com/Sw4ppleneel/SxQLear" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
     </article>
 
@@ -430,7 +430,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
         <p>Multimodal pipeline for brain tumor progression analysis: a Temporal Cognition Engine runs delta analysis across longitudinal MRI scans, and a RAG layer (MongoDB Atlas + Gemini 2.5 Flash) generates therapy reports. Data ingestion is automated with multi-agent validation.</p>
         <div class="fail-note"><b>Failure-mode thinking</b>Graceful degradation built in: if the vector layer fails, the system falls back to preserved deterministic paths instead of returning nothing — reliability as a first-class feature, in a medical context where silence is harm.</div>
         <div class="stack"><span>PyTorch</span><span>MongoDB Atlas</span><span>Gemini 2.5 Flash</span><span>RAG</span><span>Multi-agent</span></div>
-        <div class="proj-links"><a href="#ASCLEPIUS_REPO">GitHub ↗</a></div>
+        <div class="proj-links"><a href="https://github.com/ReservedSnow673/AsclepiusAI" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
     </article>
 
@@ -446,7 +446,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
         <p>A medical information platform with structured retrieval over CDSCO and FDA drug datasets, a Twilio voice interface for conversational access, and a hybrid answer pipeline: deterministic retrieval first, Gemini 2.0 Flash as fallback.</p>
         <div class="fail-note"><b>Failure-mode thinking</b>Guardrails prevent diagnostic or unsafe outputs entirely — the system is designed around what it must never say, not just what it can.</div>
         <div class="stack"><span>FastAPI</span><span>React</span><span>Vercel</span><span>Twilio</span><span>Gemini 2.0 Flash</span><span>Guardrails</span></div>
-        <div class="proj-links"><a href="#PAEON_REPO">GitHub ↗</a></div>
+        <div class="proj-links"><a href="https://github.com/Sw4ppleneel/paeon-med" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
     </article>
   </div>
