@@ -224,6 +224,44 @@ h2{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 110;font-weig
 .form-status.err{color:var(--fail)}
 footer{border-top:1px solid var(--line);padding:20px 0 36px}
 .foot-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--slate)}
+.owner-name{cursor:pointer}
+
+/* ---------- owner inbox (easter egg) ---------- */
+.admin-overlay{position:fixed;inset:0;z-index:200;background:rgba(22,33,43,.55);display:flex;align-items:flex-start;justify-content:center;padding:6vh 18px;overflow-y:auto;-webkit-font-smoothing:antialiased}
+.admin-overlay[hidden]{display:none}
+.admin-panel{width:100%;max-width:680px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 18px 50px rgba(22,33,43,.28)}
+.admin-head{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+.admin-title{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal-deep)}
+.admin-x{background:none;border:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1;padding:5px 9px;cursor:pointer;color:var(--slate)}
+.admin-x:hover{border-color:var(--ink);color:var(--ink)}
+.admin-login{padding:26px 22px;display:grid;gap:13px;max-width:340px}
+.admin-hint{font-size:13px;color:var(--slate)}
+.admin-login input{font-family:'IBM Plex Mono',monospace;font-size:14px;background:var(--panel);border:1px solid var(--line);padding:11px 13px;color:var(--ink);border-radius:2px}
+.admin-login input:focus{outline:none;border-color:var(--signal-deep)}
+.admin-login button{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.03em;padding:11px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;width:max-content}
+.admin-login button:hover{background:var(--signal-deep);border-color:var(--signal-deep)}
+.admin-login button:disabled{opacity:.55;cursor:default}
+.admin-status{font-family:'IBM Plex Mono',monospace;font-size:12px;min-height:16px;margin:0}
+.admin-status.err{color:var(--fail)}
+.admin-status.ok{color:var(--ok)}
+.admin-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--line-soft);font-size:12px;color:var(--slate)}
+.admin-toolbar-actions{display:flex;gap:8px}
+.admin-mini{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:none;border:1px solid var(--line);padding:5px 11px;cursor:pointer;color:var(--ink)}
+.admin-mini:hover{border-color:var(--ink);background:var(--panel)}
+.admin-list{max-height:64vh;overflow-y:auto}
+.admin-empty{padding:34px 20px;text-align:center;color:var(--slate);font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+.msg{padding:16px 18px;border-bottom:1px solid var(--line-soft);background:var(--paper)}
+.msg.unread{background:rgba(232,147,12,.05);border-left:3px solid var(--signal)}
+.msg-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.msg-from{font-weight:600;font-size:14.5px;color:var(--ink)}
+.msg-date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);white-space:nowrap}
+.msg-email{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--signal-deep);text-decoration:none;border-bottom:1px solid var(--line);word-break:break-all}
+.msg-email:hover{color:var(--ink)}
+.msg-body{font-size:14px;color:#33424E;margin:8px 0 0;white-space:pre-wrap;word-break:break-word}
+.msg-actions{display:flex;gap:8px;margin-top:11px}
+.msg-actions button{font-family:'IBM Plex Mono',monospace;font-size:11px;background:none;border:1px solid var(--line);padding:4px 10px;cursor:pointer;color:var(--slate)}
+.msg-actions button:hover{border-color:var(--ink);color:var(--ink)}
+.msg-actions .del:hover{border-color:var(--fail);color:var(--fail)}
 </style>
 </head>
 <body>
@@ -467,14 +505,8 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
     </div>
 
     <form id="contact-form" class="contact-form">
-      <!-- Web3Forms: paste your free access key from https://web3forms.com (enter your email, key is mailed to you). -->
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-      <input type="hidden" name="subject" value="New message from your portfolio">
-      <input type="hidden" name="from_name" value="Portfolio contact form">
-      <!-- honeypot: hidden from humans, catches bots -->
-      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
+      <input type="text" name="from_name" placeholder="Your name" required>
+      <input type="email" name="reply_to" placeholder="Your email" required>
       <textarea name="message" rows="4" placeholder="What are you building, and where might it break?" required></textarea>
       <button type="submit" id="send-btn">Send message</button>
       <p class="form-status" id="form-status" aria-live="polite"></p>
@@ -484,7 +516,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
 
 <footer>
   <div class="foot-inner">
-    <span>© 2026 Swapneel Premchand · Mohali, IN</span>
+    <span>© 2026 <span class="owner-name" id="owner-name" title=" ">Swapneel Premchand</span> · Mohali, IN</span>
     <span>uptime matters · <span style="color:var(--ok)">●</span> site operational</span>
   </div>
 </footer>
@@ -551,61 +583,237 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
 <!-- Cursor trail effect -->
 <script src="cursor.js"></script>
 
-<!-- Contact form: Web3Forms (delivers straight to inbox) with a mailto fallback -->
+<!-- Backend API base. '' = same origin. If the inbox API runs elsewhere, set the full origin, e.g. 'https://api.swapneel.dev' -->
+<script>window.PF_API_BASE = '';</script>
+
+<!-- Contact form: stores the message in the backend inbox AND fires the EmailJS auto-reply to the visitor -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
 (function(){
+  emailjs.init('UrY-gYCg_PKD4enNm');
+
+  const SERVICE  = 'service_u9mhyyf';
+  const TEMPLATE = 'template_6st5lmv';   // To Email = swapneel.bit@gmail.com; Auto-Reply tab replies to the visitor
+
   const form = document.getElementById('contact-form');
   const btn = document.getElementById('send-btn');
   const status = document.getElementById('form-status');
-  const MY_EMAIL = 'swapneel.bit@gmail.com';
-
   function setStatus(cls, msg){ status.className = 'form-status' + (cls ? ' ' + cls : ''); status.textContent = msg; }
 
-  // Last-resort path: open the visitor's mail client with the message pre-composed.
-  function mailtoFallback(data){
-    const subject = encodeURIComponent('Portfolio message from ' + (data.name || 'someone'));
-    const body = encodeURIComponent(
-      'From: ' + (data.name || '') + ' <' + (data.email || '') + '>\n\n' + (data.message || '')
-    );
-    window.location.href = 'mailto:' + MY_EMAIL + '?subject=' + subject + '&body=' + body;
-  }
-
-  form.addEventListener('submit', async function(e){
+  form.addEventListener('submit', function(e){
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(form).entries());
-    const key = data.access_key;
-
-    // No real key configured yet → go straight to the visitor's email app so nothing is lost.
-    if(!key || key === 'YOUR_WEB3FORMS_KEY'){
-      setStatus('', '[ok] opening your email app…');
-      mailtoFallback(data);
-      return;
-    }
-
     btn.disabled = true;
     btn.textContent = 'Sending…';
     setStatus('', '');
-    try{
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      const out = await res.json();
-      if(out.success){
-        setStatus('ok', "[ok] message delivered — I'll get back to you.");
+
+    // 1) store the typed message in the backend inbox
+    const store = fetch((window.PF_API_BASE || '') + '/api/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.from_name.value.trim(),
+        email: form.reply_to.value.trim(),
+        message: form.message.value.trim()
+      })
+    }).then(function(r){ if(!r.ok) throw new Error('store failed'); });
+
+    // 2) keep the existing auto-reply to the visitor
+    const reply = emailjs.sendForm(SERVICE, TEMPLATE, form);
+
+    Promise.allSettled([store, reply]).then(function(res){
+      const ok = res.some(function(r){ return r.status === 'fulfilled'; });
+      if(ok){
+        setStatus('ok', "[ok] message sent — I'll get back to you.");
         form.reset();
       } else {
-        throw new Error(out.message || 'send failed');
+        setStatus('err', '[fail] could not send — email me directly at swapneel.bit@gmail.com');
       }
-    } catch(err){
-      setStatus('err', '[fail] send failed — opening your email app as backup…');
-      mailtoFallback(data);
-    } finally {
       btn.disabled = false;
       btn.textContent = 'Send message';
-    }
+    });
   });
+})();
+</script>
+
+<!-- Owner inbox (easter egg): click the name in the footer → password login → read stored messages.
+     No password or messages live in this file; everything comes from the authenticated backend. -->
+<div class="admin-overlay" id="admin-overlay" hidden>
+  <div class="admin-panel" role="dialog" aria-modal="true" aria-label="Owner inbox">
+    <div class="admin-head">
+      <span class="admin-title mono" id="admin-title">restricted // inbox</span>
+      <button class="admin-x" id="admin-close" type="button" aria-label="Close">✕</button>
+    </div>
+
+    <form class="admin-login" id="admin-login">
+      <p class="admin-hint">Owner access only. Enter your password.</p>
+      <input type="password" id="admin-pass" placeholder="password" autocomplete="current-password" aria-label="Password">
+      <button type="submit" id="admin-login-btn">Unlock</button>
+      <p class="admin-status" id="admin-login-status" aria-live="polite"></p>
+    </form>
+
+    <div class="admin-inbox" id="admin-inbox" hidden>
+      <div class="admin-toolbar">
+        <span class="mono" id="inbox-count">—</span>
+        <span class="admin-toolbar-actions">
+          <button class="admin-mini" id="inbox-refresh" type="button">refresh</button>
+          <button class="admin-mini" id="inbox-logout" type="button">logout</button>
+        </span>
+      </div>
+      <div class="admin-list" id="admin-list"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const API = function(p){ return (window.PF_API_BASE || '') + p; };
+  const TOKEN_KEY = 'pf_admin_token';
+
+  const overlay   = document.getElementById('admin-overlay');
+  const trigger   = document.getElementById('owner-name');
+  const closeBtn  = document.getElementById('admin-close');
+  const loginForm = document.getElementById('admin-login');
+  const loginView = loginForm;
+  const inboxView = document.getElementById('admin-inbox');
+  const passInput = document.getElementById('admin-pass');
+  const loginBtn  = document.getElementById('admin-login-btn');
+  const loginStat = document.getElementById('admin-login-status');
+  const listEl    = document.getElementById('admin-list');
+  const countEl   = document.getElementById('inbox-count');
+
+  let token = sessionStorage.getItem(TOKEN_KEY) || null;
+
+  function setStat(cls, msg){ loginStat.className = 'admin-status' + (cls ? ' ' + cls : ''); loginStat.textContent = msg; }
+  function showLogin(){ inboxView.hidden = true; loginView.hidden = false; setTimeout(function(){ passInput.focus(); }, 30); }
+  function showInbox(){ loginView.hidden = true; inboxView.hidden = false; }
+
+  function open(){
+    overlay.hidden = false;
+    if(token){ showInbox(); loadMessages(); } else { setStat('', ''); passInput.value=''; showLogin(); }
+  }
+  function close(){ overlay.hidden = true; }
+
+  function fmtDate(iso){
+    const d = new Date(iso);
+    if(isNaN(d)) return iso;
+    return d.toLocaleString(undefined, { dateStyle:'medium', timeStyle:'short' });
+  }
+
+  function logout(){
+    token = null;
+    sessionStorage.removeItem(TOKEN_KEY);
+    listEl.textContent = '';
+    showLogin();
+  }
+
+  // Build each message node with textContent only — a message containing HTML
+  // or <script> can never execute in the inbox view.
+  function renderMessages(items){
+    listEl.textContent = '';
+    countEl.textContent = items.length + (items.length === 1 ? ' message' : ' messages');
+    if(!items.length){
+      const empty = document.createElement('div');
+      empty.className = 'admin-empty';
+      empty.textContent = 'no messages yet.';
+      listEl.appendChild(empty);
+      return;
+    }
+    items.forEach(function(m){
+      const card = document.createElement('div');
+      card.className = 'msg' + (m.is_read ? '' : ' unread');
+
+      const top = document.createElement('div');
+      top.className = 'msg-top';
+      const from = document.createElement('span');
+      from.className = 'msg-from';
+      from.textContent = m.name;
+      const date = document.createElement('span');
+      date.className = 'msg-date';
+      date.textContent = fmtDate(m.created_at);
+      top.appendChild(from); top.appendChild(date);
+
+      const email = document.createElement('a');
+      email.className = 'msg-email';
+      email.href = 'mailto:' + m.email;
+      email.textContent = m.email;
+
+      const body = document.createElement('p');
+      body.className = 'msg-body';
+      body.textContent = m.message;
+
+      const actions = document.createElement('div');
+      actions.className = 'msg-actions';
+      if(!m.is_read){
+        const readBtn = document.createElement('button');
+        readBtn.type = 'button';
+        readBtn.textContent = 'mark read';
+        readBtn.addEventListener('click', function(){ markRead(m.id); });
+        actions.appendChild(readBtn);
+      }
+      const delBtn = document.createElement('button');
+      delBtn.type = 'button';
+      delBtn.className = 'del';
+      delBtn.textContent = 'delete';
+      delBtn.addEventListener('click', function(){ if(confirm('Delete this message?')) del(m.id); });
+      actions.appendChild(delBtn);
+
+      card.appendChild(top);
+      card.appendChild(email);
+      card.appendChild(body);
+      card.appendChild(actions);
+      listEl.appendChild(card);
+    });
+  }
+
+  function authed(path, opts){
+    opts = opts || {};
+    opts.headers = Object.assign({}, opts.headers, { 'Authorization': 'Bearer ' + token });
+    return fetch(API(path), opts).then(function(r){
+      if(r.status === 401){ logout(); throw new Error('session expired'); }
+      if(!r.ok) throw new Error('request failed');
+      return r;
+    });
+  }
+
+  function loadMessages(){
+    countEl.textContent = 'loading…';
+    authed('/api/admin/messages').then(function(r){ return r.json(); })
+      .then(renderMessages)
+      .catch(function(e){ countEl.textContent = (e.message === 'session expired') ? 'session expired' : 'could not load'; });
+  }
+  function markRead(id){ authed('/api/admin/messages/' + id + '/read', { method:'POST' }).then(loadMessages).catch(function(){}); }
+  function del(id){ authed('/api/admin/messages/' + id, { method:'DELETE' }).then(loadMessages).catch(function(){}); }
+
+  loginForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const pw = passInput.value;
+    if(!pw) return;
+    loginBtn.disabled = true; loginBtn.textContent = 'Checking…'; setStat('', '');
+    fetch(API('/api/admin/login'), {
+      method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ password: pw })
+    }).then(function(r){
+      if(r.status === 429){ throw new Error('too many attempts — wait a few minutes'); }
+      if(r.status === 401){ throw new Error('wrong password'); }
+      if(!r.ok){ throw new Error('login unavailable'); }
+      return r.json();
+    }).then(function(data){
+      token = data.token;
+      sessionStorage.setItem(TOKEN_KEY, token);
+      passInput.value = '';
+      showInbox(); loadMessages();
+    }).catch(function(err){
+      setStat('err', '[fail] ' + err.message);
+    }).finally(function(){
+      loginBtn.disabled = false; loginBtn.textContent = 'Unlock';
+    });
+  });
+
+  trigger.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  document.getElementById('inbox-refresh').addEventListener('click', loadMessages);
+  document.getElementById('inbox-logout').addEventListener('click', logout);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !overlay.hidden) close(); });
 })();
 </script>
 </body>
