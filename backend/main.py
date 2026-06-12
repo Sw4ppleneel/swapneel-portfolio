@@ -9,6 +9,7 @@ from pydantic import BaseModel, EmailStr, Field
 
 import auth
 import db
+import notify
 from config import settings
 
 
@@ -49,12 +50,15 @@ class MessageIn(BaseModel):
 def create_message(payload: MessageIn):
     if payload.company:  # a bot filled the hidden field — silently drop
         return {"ok": True}
+    name = payload.name.strip()
+    message = payload.message.strip()
     db.add_message(
-        payload.name.strip(),
+        name,
         str(payload.email),
-        payload.message.strip(),
+        message,
         datetime.now(timezone.utc).isoformat(),
     )
+    notify.send_telegram(name, str(payload.email), message)  # best-effort ping
     return {"ok": True}
 
 

@@ -10,6 +10,10 @@ class Settings(BaseSettings):
     jwt_ttl_minutes: int = 120
     allowed_origins: str = "http://localhost:5173"
 
+    # Optional Telegram ping on each new message. Leave blank to disable.
+    telegram_bot_token: str = ""
+    telegram_chat_id: str = ""
+
     # Postgres connection string. Vercel Postgres exposes POSTGRES_URL; Neon and
     # most others expose DATABASE_URL — accept either.
     database_url: str = Field(
