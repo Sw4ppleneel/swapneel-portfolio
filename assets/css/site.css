@@ -233,6 +233,8 @@ section{scroll-margin-top:70px}
 .project-name{font-family:var(--f-display);font-weight:400;font-size:clamp(44px,5.5vw,76px);line-height:1;color:#fff}
 .project-pitch{font-style:italic;color:var(--mute);margin:6px 0 18px}
 .project-body > p{max-width:66ch}
+.project-body > p + p{margin-top:12px}
+.project-body > p + .tags{margin-top:18px}
 .failure{margin:22px 0;padding:16px 20px;border-left:4px solid var(--ember);background:rgba(18,22,64,.6);max-width:66ch}
 .failure-title{color:var(--ember);margin-bottom:6px}
 .failure p:last-child{color:var(--moon)}
@@ -283,6 +285,8 @@ section{scroll-margin-top:70px}
 .methods{display:grid;gap:22px;align-content:start}
 .methods dt{color:var(--sky);margin-bottom:4px}
 .methods dd{color:var(--moon)}
+.methods--inline{margin:18px 0 6px;max-width:66ch;gap:14px}
+#projects{padding-top:clamp(40px,6vw,80px)}
 
 /* ─── guilds ─── */
 .guilds{padding-top:clamp(60px,8vw,110px);padding-bottom:clamp(60px,8vw,110px)}

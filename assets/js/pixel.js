@@ -143,6 +143,10 @@
       '................','.....m....m.....','......m..m......','.......mm.......','.mmmmmmmmmmmmmm.','.mBBBBBBBBBBBGm.',
       '.mBcBBBBBBBBBGm.','.mBBBBBBBBBBBGm.','.mBBBBBWBBBBBGm.','.mBBBBBBBBBBBGm.','.mBBBBBBBBBBBGm.','.mmmmmmmmmmmmmm.',
       '...GG......GG...','................','................','................'],
+    chart:[
+      '................','................','.m..............','.m.........oo...','.m........o..o..','.m.......o......',
+      '.m..bb..o.......','.m..bb.o........','.m..bbo....bb...','.m..bb.....bb...','.m..bb.bb..bb...','.m..bb.bb..bb...',
+      '.m..bb.bb..bb...','.mmmmmmmmmmmmmm.','................','................'],
     cite:[
       '................','...wwwwwwwww....','...wWWWWWWWww...','...wWggggWWwWw..','...wWWWWWWWwwww.','...wWggggggWWWw.',
       '...wWWWWWWWWWWw.','...wWggggggWWWw.','...wWWWWWWWWWWw.','...wWgggWWWWeWw.','...wWWWWWWWeWWw.','...wWgggWeWeWWw.',

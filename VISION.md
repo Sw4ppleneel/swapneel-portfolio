@@ -70,6 +70,11 @@ typography.
   - Cyber Defense Club: DaVinci Node AI jailbreaking, CTF workshops ×2.
   - GDG Ranchi.
 
+**Structure change:** "the work" is split into **experience** (EXP—01 Tulips + topology demo, 02 Flyback,
+03 AWS Campus Ambassador, 04 University of Missouri RA, which absorbs the old research section) and
+**projects** (PRJ—01 CitefyMe, 02 SxQLear, 03 Asclepius, 04 Paeon). The nav reads experience · projects ·
+guilds · off the clock · pictures.
+
 ## The visual language: three voices, each with one job
 
 The moodboard is a **collage on deep midnight navy**. Cream paper strips carry typewriter text,

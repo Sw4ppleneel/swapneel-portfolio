@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<a class="skip" href="#work">Skip to the work</a>
+<a class="skip" href="#experience">Skip to the work</a>
 
 <!-- boot: prints one line, then the night fades in (skipped on repeat visits) -->
 <div class="boot" id="boot" aria-hidden="true"><span class="boot-line" id="boot-line"></span><span class="caret"></span></div>
@@ -26,8 +26,8 @@
 <header class="nav" id="nav">
   <a class="nav-mark" href="#top">swapneel<span class="dot">.</span></a>
   <nav class="nav-links" aria-label="Sections">
-    <a href="#work">work</a>
-    <a href="#research">research</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
     <a href="#guilds">guilds</a>
     <a href="#off-clock">off the clock</a>
     <a href="#pictures">pictures</a>
@@ -58,7 +58,7 @@
     </ul>
 
     <div class="hero-actions">
-      <a class="btn-px" href="#work">See the work</a>
+      <a class="btn-px" href="#experience">See the work</a>
       <button class="btn-px btn-px--ghost" type="button" data-open-contact>Get in touch</button>
     </div>
   </div>
@@ -122,24 +122,24 @@
   </aside>
 </section>
 
-<!-- ───────────── 3 · work ───────────── -->
-<section class="work wrap" id="work">
+<!-- ───────────── 3 · experience ───────────── -->
+<section class="work wrap" id="experience">
   <header class="section-head reveal">
-    <p class="eyebrow">built to survive contact with production</p>
-    <h2 class="display">the work<span class="dot">.</span></h2>
+    <p class="eyebrow">roles — and the pagers that came with them</p>
+    <h2 class="display">experience<span class="dot">.</span></h2>
   </header>
 
-  <!-- PRJ 01 -->
+  <!-- EXP 01 · Tulips -->
   <article class="project reveal" aria-labelledby="p1">
     <div class="project-side">
-      <p class="px-label">PRJ—01</p>
+      <p class="px-label">EXP—01</p>
       <canvas class="project-icon" data-icon="bell" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:-2deg">in production</p>
     </div>
     <div class="project-body">
       <h3 class="project-name" id="p1">Tulips.edu</h3>
-      <p class="project-pitch">school ERP · live in 3 schools, used daily</p>
-      <p>Multi-tenant school ERP: student records, fees (UPI deep links + QR), academics and parent communication across three surfaces — public site, staff ERP, parent portal — on one SPA. Tenant isolation is enforced in middleware with <code>tenant_id</code> on every table; every API route is role-checked across five roles; every state change emits an immutable audit event.</p>
+      <p class="project-pitch">Founder · Jun '26 — now · Ranchi · school ERP, live in 3 schools and used daily</p>
+      <p>Founded and built it alone, and I own the whole stack: architecture, deployment, operations, plus client onboarding, pricing, support and incident response. Multi-tenant school ERP: student records, fees (UPI deep links + QR), academics and parent communication across three surfaces — public site, staff ERP, parent portal — on one SPA. Tenant isolation is enforced in middleware with <code>tenant_id</code> on every table; every API route is role-checked across five roles; every state change emits an immutable audit event.</p>
       <div class="failure">
         <p class="px-label failure-title">failure-mode thinking</p>
         <p>The most frequent failure in an Indian school isn't the server — it's the teacher's connectivity. Attendance is offline-first: writes queue in IndexedDB and background-sync on recovery. Uploads go direct to R2 via presigned URLs, so storage failures never touch the app server. Migrations are raw versioned SQL, because schemas holding fee records don't get ORM surprises.</p>
@@ -171,16 +171,16 @@
     </div>
   </figure>
 
-  <!-- PRJ 02 -->
+  <!-- EXP 02 · Flyback -->
   <article class="project reveal" aria-labelledby="p-fb">
     <div class="project-side">
-      <p class="px-label">PRJ—02</p>
+      <p class="px-label">EXP—02</p>
       <canvas class="project-icon" data-icon="plane" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:1deg">sole engineer · now</p>
     </div>
     <div class="project-body">
       <h3 class="project-name" id="p-fb">Flyback</h3>
-      <p class="project-pitch">Founder's Office · recruiting platform matching overseas Indian professionals with high-growth Indian teams</p>
+      <p class="project-pitch">Founder's Office Intern · Aug '26 — now · recruiting platform matching overseas Indian professionals with high-growth Indian teams</p>
       <p>The only engineer on the team, leading architecture and infrastructure. Rebuilt the production platform and the staff CRM from scratch, and built the sourcing side: custom scrapers and ATS ingestion pipelines that keep the candidate pool fed automatically.</p>
       <div class="failure">
         <p class="px-label failure-title">failure-mode thinking</p>
@@ -191,10 +191,57 @@
     </div>
   </article>
 
-  <!-- PRJ 03 -->
+  <!-- EXP 03 · AWS -->
+  <article class="project reveal" aria-labelledby="e-aws">
+    <div class="project-side">
+      <p class="px-label">EXP—03</p>
+      <canvas class="project-icon" data-icon="cloud" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:1.5deg">300+ onboarded</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="e-aws">Amazon Web Services</h3>
+      <p class="project-pitch">Campus Ambassador · Aug — Sep '26 · Plaksha University, Mohali</p>
+      <p>Contracted to drive student adoption of AWS developer and cloud-learning programmes on campus. Ran tabling activations, technical walk-throughs and digital outreach, and beat the regional campaign quota by onboarding 300+ students to AWS Builder platforms.</p>
+      <ul class="tags px-label"><li>Developer outreach</li><li>Technical walk-throughs</li><li>AWS Builder</li><li>Campus campaigns</li></ul>
+    </div>
+  </article>
+
+  <!-- EXP 04 · University of Missouri -->
+  <article class="project reveal" id="research" aria-labelledby="e-mizzou">
+    <div class="project-side">
+      <p class="px-label">EXP—04</p>
+      <canvas class="project-icon" data-icon="chart" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:-1deg">causal inference</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="e-mizzou">University of Missouri</h3>
+      <p class="project-pitch">Research Assistant · May — Aug '26 · with Prof. Anuj Kapoor · Continuity of Care on Digital Health Platforms</p>
+      <p>A large-scale digital physiotherapy dataset. When a physiotherapist exits unexpectedly, it breaks a patient's care mid-episode. These provider-side shocks are plausibly exogenous — clean variation for asking how much continuity causally matters, and for whom.</p>
+      <p>My work spanned the identification strategy and the estimation pipeline, including pressure-testing parallel-trends assumptions across two difference-in-differences designs and validating dose-response gradients.</p>
+      <div class="failure">
+        <p class="px-label failure-title">the hard part</p>
+        <p>The treatment is a path through an adaptive system, where standard regression breaks down.</p>
+      </div>
+      <dl class="methods methods--inline">
+        <div><dt class="px-label">identification</dt><dd>Staggered DiD (Callaway–Sant'Anna), provider exits as instruments, discrete-time hazard models.</dd></div>
+        <div><dt class="px-label">causal ml</dt><dd>Double/debiased ML, causal forests, R-/DR-learners for heterogeneous effects across patient fragility.</dd></div>
+        <div><dt class="px-label">sequence models</dt><dd>Transformer encoders over care trajectories, counterfactual RNNs, representation balancing (TARNet/CFRNet).</dd></div>
+      </dl>
+    </div>
+  </article>
+</section>
+
+<!-- ───────────── 4 · projects ───────────── -->
+<section class="work wrap" id="projects">
+  <header class="section-head reveal">
+    <p class="eyebrow">built to survive contact with production</p>
+    <h2 class="display">projects<span class="dot">.</span></h2>
+  </header>
+
+  <!-- PRJ 01 · CitefyMe -->
   <article class="project reveal" aria-labelledby="p-cite">
     <div class="project-side">
-      <p class="px-label">PRJ—03</p>
+      <p class="px-label">PRJ—01</p>
       <canvas class="project-icon" data-icon="cite" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:-1.5deg">open source · RAG</p>
     </div>
@@ -211,10 +258,10 @@
     </div>
   </article>
 
-  <!-- PRJ 04 -->
+  <!-- PRJ 02 · SxQLear -->
   <article class="project reveal" aria-labelledby="p2">
     <div class="project-side">
-      <p class="px-label">PRJ—04</p>
+      <p class="px-label">PRJ—02</p>
       <canvas class="project-icon" data-icon="lens" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:1.5deg">open source</p>
     </div>
@@ -231,10 +278,10 @@
     </div>
   </article>
 
-  <!-- PRJ 05 -->
+  <!-- PRJ 03 · Asclepius -->
   <article class="project reveal" aria-labelledby="p3">
     <div class="project-side">
-      <p class="px-label">PRJ—05</p>
+      <p class="px-label">PRJ—03</p>
       <canvas class="project-icon" data-icon="brain" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:-1deg">1st / 450+ teams</p>
     </div>
@@ -251,10 +298,10 @@
     </div>
   </article>
 
-  <!-- PRJ 06 -->
+  <!-- PRJ 04 · Paeon -->
   <article class="project reveal" aria-labelledby="p4">
     <div class="project-side">
-      <p class="px-label">PRJ—06</p>
+      <p class="px-label">PRJ—04</p>
       <canvas class="project-icon" data-icon="pill" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:2deg">1st runner-up</p>
     </div>
@@ -270,27 +317,6 @@
       <a class="link-px" href="https://github.com/Sw4ppleneel/paeon-med" target="_blank" rel="noopener">github ↗</a>
     </div>
   </article>
-</section>
-
-<!-- ───────────── 4 · research ───────────── -->
-<section class="research wrap" id="research">
-  <header class="section-head reveal">
-    <p class="eyebrow">causal inference on real-world health data · May – Aug '26</p>
-    <h2 class="display">research<span class="dot">.</span></h2>
-  </header>
-  <div class="research-grid reveal">
-    <div class="abstract">
-      <p class="px-label">abstract</p>
-      <p><strong>Continuity of Care on Digital Health Platforms</strong> — research assistantship with Prof. Anuj Kapoor (University of Missouri), on a large-scale digital physiotherapy dataset.</p>
-      <p>When a physiotherapist exits unexpectedly, it breaks a patient's care mid-episode. These provider-side shocks are plausibly exogenous — clean variation for asking how much continuity causally matters, and for whom. The hard part: the treatment is a path through an adaptive system, where standard regression breaks down.</p>
-      <p>My work spans the identification strategy and the estimation pipeline — including pressure-testing parallel-trends assumptions across two difference-in-differences designs and validating dose-response gradients.</p>
-    </div>
-    <dl class="methods">
-      <div><dt class="px-label">identification</dt><dd>Staggered DiD (Callaway–Sant'Anna), provider exits as instruments, discrete-time hazard models.</dd></div>
-      <div><dt class="px-label">causal ml</dt><dd>Double/debiased ML, causal forests, R-/DR-learners for heterogeneous effects across patient fragility.</dd></div>
-      <div><dt class="px-label">sequence models</dt><dd>Transformer encoders over care trajectories, counterfactual RNNs, representation balancing (TARNet/CFRNet).</dd></div>
-    </dl>
-  </div>
 </section>
 
 <!-- ───────────── 4b · guilds (clubs & community) ───────────── -->

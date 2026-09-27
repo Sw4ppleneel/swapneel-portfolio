@@ -63,7 +63,7 @@
         links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['work', 'research', 'guilds', 'off-clock', 'pictures'].forEach(id => { const s = document.getElementById(id); if(s) secObs.observe(s); });
+    ['experience', 'projects', 'guilds', 'off-clock', 'pictures'].forEach(id => { const s = document.getElementById(id); if(s) secObs.observe(s); });
 
     // ─── reveals ───
     const io = new IntersectionObserver(es => {
