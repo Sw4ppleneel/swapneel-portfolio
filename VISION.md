@@ -60,7 +60,8 @@ typography.
 
 - Current roles: Founder, Tulips.edu (since Jun '26); Founder's Office Intern at Flyback (since Aug '26),
   where he's the sole engineer (platform + CRM rebuild, a two-pass hybrid matcher with human-in-the-loop
-  review, scrapers and ATS ingestion). Flyback is now PRJ—02.
+  review, scrapers and ATS ingestion). Flyback is now PRJ—02, and **CitefyMe** (a research RAG with claim-level verification and honest
+  eval findings) is PRJ—03.
 - Past roles: RA with Prof. Kapoor (May–Aug '26), AWS Campus Ambassador (Aug–Sep '26, 300+ students).
 - Certifications appear as "badges earned" under moves learned.
 - **Guilds joined** (clubs), from 4b onwards:

@@ -192,9 +192,29 @@
   </article>
 
   <!-- PRJ 03 -->
-  <article class="project reveal" aria-labelledby="p2">
+  <article class="project reveal" aria-labelledby="p-cite">
     <div class="project-side">
       <p class="px-label">PRJ—03</p>
+      <canvas class="project-icon" data-icon="cite" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:-1.5deg">open source · RAG</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="p-cite">CitefyMe</h3>
+      <p class="project-pitch">local-first research RAG where every claim carries its evidence — and a verdict</p>
+      <p>Ask questions over papers pulled live from arXiv (abstracts, or whole papers via HTML/PDF ingestion). The pipeline retrieves with BM25, Gemini embeddings or hybrid RRF, extracts each claim from the answer, and runs it back against its cited passage for a <code>supported</code> / <code>partial</code> / <code>unsupported</code> verdict. Hand-rolled orchestration, no agent framework, with a FastAPI backend and a React + TypeScript UI that answer through the same code path the eval harness measures.</p>
+      <div class="failure">
+        <p class="px-label failure-title">failure-mode thinking</p>
+        <p>Measured on real 20-paper arXiv corpora, not the toy set: that's where hybrid RRF turned out to lose to dense alone (MRR 0.79 vs 0.94), which the 4-paper set had hidden. The evals also caught retrieval making the system more confidently wrong on unanswerable questions — 100% citation coverage isn't knowing when to abstain — and that's written up as an open gap, not buried.</p>
+      </div>
+      <ul class="tags px-label"><li>Python</li><li>BM25 · dense · RRF</li><li>Gemini embeddings</li><li>Claim verification</li><li>Recall@K · MRR evals</li><li>FastAPI</li><li>React + TS</li></ul>
+      <a class="link-px" href="https://github.com/Sw4ppleneel/citefyme" target="_blank" rel="noopener">github ↗</a>
+    </div>
+  </article>
+
+  <!-- PRJ 04 -->
+  <article class="project reveal" aria-labelledby="p2">
+    <div class="project-side">
+      <p class="px-label">PRJ—04</p>
       <canvas class="project-icon" data-icon="lens" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:1.5deg">open source</p>
     </div>
@@ -211,10 +231,10 @@
     </div>
   </article>
 
-  <!-- PRJ 04 -->
+  <!-- PRJ 05 -->
   <article class="project reveal" aria-labelledby="p3">
     <div class="project-side">
-      <p class="px-label">PRJ—04</p>
+      <p class="px-label">PRJ—05</p>
       <canvas class="project-icon" data-icon="brain" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:-1deg">1st / 450+ teams</p>
     </div>
@@ -231,10 +251,10 @@
     </div>
   </article>
 
-  <!-- PRJ 05 -->
+  <!-- PRJ 06 -->
   <article class="project reveal" aria-labelledby="p4">
     <div class="project-side">
-      <p class="px-label">PRJ—05</p>
+      <p class="px-label">PRJ—06</p>
       <canvas class="project-icon" data-icon="pill" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:2deg">1st runner-up</p>
     </div>

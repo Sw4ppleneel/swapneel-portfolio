@@ -143,6 +143,10 @@
       '................','.....m....m.....','......m..m......','.......mm.......','.mmmmmmmmmmmmmm.','.mBBBBBBBBBBBGm.',
       '.mBcBBBBBBBBBGm.','.mBBBBBBBBBBBGm.','.mBBBBBWBBBBBGm.','.mBBBBBBBBBBBGm.','.mBBBBBBBBBBBGm.','.mmmmmmmmmmmmmm.',
       '...GG......GG...','................','................','................'],
+    cite:[
+      '................','...wwwwwwwww....','...wWWWWWWWww...','...wWggggWWwWw..','...wWWWWWWWwwww.','...wWggggggWWWw.',
+      '...wWWWWWWWWWWw.','...wWggggggWWWw.','...wWWWWWWWWWWw.','...wWgggWWWWeWw.','...wWWWWWWWeWWw.','...wWgggWeWeWWw.',
+      '...wWWWWWWeWWWw.','...wwwwwwwwwwww.','................','................'],
     plane:[
       '................','................','.............W..','...........WWb..','.........WWwb...','.......WWwwb....',
       '.....WWwwwb.....','...WWwwwwb......','.WWwwwwwb.......','...bbwwb........','.....bwb........','.....bb.........',
