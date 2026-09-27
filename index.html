@@ -3,657 +3,473 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swapneel Premchand — AI Engineer</title>
-<meta name="description" content="Swapneel Premchand builds AI systems designed for failure modes — production SaaS, causal inference research, and reliability-first ML pipelines.">
+<title>Swapneel Premchand — AI & Backend Engineer</title>
+<meta name="description" content="Swapneel Premchand — founder of Tulips.edu, AI & backend engineer at Plaksha University. Builds systems for when things break. Also: mountains, poetry, guitar, Pokémon.">
+<meta name="theme-color" content="#0A0D26">
+<meta property="og:title" content="Swapneel Premchand — builds systems for when things break">
+<meta property="og:description" content="Founder, Tulips.edu · AI & Backend Engineer · CS + AI @ Plaksha University">
+<meta property="og:image" content="assets/photos/dharamshala-walk.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%230A0D26'/%3E%3Crect x='2' y='1' width='4' height='1' fill='%23D9DCE6'/%3E%3Crect x='1' y='2' width='5' height='4' fill='%23D9DCE6'/%3E%3Crect x='2' y='6' width='4' height='1' fill='%23D9DCE6'/%3E%3Crect x='4' y='2' width='2' height='2' fill='%230A0D26'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#F2F5F7;
-  --panel:#FAFCFD;
-  --ink:#16212B;
-  --slate:#546573;
-  --line:#C9D4DC;
-  --line-soft:#DCE4EA;
-  --signal:#E8930C;
-  --signal-deep:#B36F04;
-  --ok:#1F8A5D;
-  --fail:#C2452D;
-  --grid:rgba(22,33,43,0.045);
-  --maxw:1080px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-}
-body{
-  font-family:'IBM Plex Sans',system-ui,sans-serif;
-  background:var(--paper);
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size:28px 28px;
-  color:var(--ink);
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--signal);color:#fff}
-a{color:inherit}
-a:focus-visible, button:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
-.mono{font-family:'IBM Plex Mono',monospace}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-
-/* ---------- top status bar ---------- */
-.topbar{
-  position:sticky;top:0;z-index:50;
-  background:var(--paper);
-  border-bottom:1px solid var(--line);
-}
-.topbar-inner{
-  max-width:var(--maxw);margin:0 auto;padding:0 24px;
-  display:flex;align-items:center;justify-content:space-between;
-  height:52px;
-}
-.brand{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.04em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,138,93,.45)}50%{box-shadow:0 0 0 5px rgba(31,138,93,0)}}
-nav{display:flex;gap:22px}
-nav a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-decoration:none;color:var(--slate)}
-nav a:hover{color:var(--ink)}
-@media(max-width:640px){nav{display:none}}
-
-/* ---------- hero ---------- */
-.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
-.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:18px}
-.eyebrow b{color:var(--signal-deep);font-weight:500}
-h1{
-  font-family:'Archivo',sans-serif;
-  font-variation-settings:'wdth' 115;
-  font-weight:800;
-  font-size:clamp(34px,5.4vw,62px);
-  line-height:1.04;
-  letter-spacing:-.015em;
-  max-width:18ch;
-}
-h1 .break-word{color:var(--signal-deep);position:relative;white-space:nowrap}
-h1 .break-word::after{content:'';position:absolute;left:0;right:0;bottom:.06em;height:.1em;background:var(--signal);opacity:.35}
-.hero-sub{margin-top:22px;max-width:58ch;color:var(--slate);font-size:17px}
-.hero-sub strong{color:var(--ink);font-weight:600}
-.hero-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{
-  font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.03em;
-  padding:11px 20px;border:1px solid var(--ink);text-decoration:none;
-  background:var(--ink);color:var(--paper);transition:background .15s,color .15s;
-}
-.btn.ghost{background:transparent;color:var(--ink)}
-.btn:hover{background:var(--signal-deep);border-color:var(--signal-deep);color:#fff}
-
-/* ---------- degradation demo ---------- */
-.demo{
-  margin-top:48px;
-  border:1px solid var(--line);
-  background:var(--panel);
-}
-.demo-head{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:12px 18px;border-bottom:1px solid var(--line-soft);flex-wrap:wrap;
-}
-.demo-title{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
-.demo-status{font-family:'IBM Plex Mono',monospace;font-size:12px;display:flex;align-items:center;gap:8px}
-.sdot{width:9px;height:9px;border-radius:50%;background:var(--ok)}
-.demo.degraded .sdot{background:var(--signal)}
-.demo.down .sdot{background:var(--fail)}
-.demo-body{padding:22px 18px 8px}
-.demo svg{width:100%;height:auto;display:block}
-.node{cursor:pointer}
-.node rect{fill:#fff;stroke:var(--ink);stroke-width:1.5;transition:fill .2s,stroke .2s}
-.node text{font-family:'IBM Plex Mono',monospace;font-size:11.5px;fill:var(--ink);pointer-events:none}
-.node .sub{font-size:9.5px;fill:var(--slate)}
-.node:hover rect{stroke:var(--signal-deep)}
-.node.dead rect{fill:#FBEAE5;stroke:var(--fail);stroke-dasharray:4 3}
-.node.dead text{fill:var(--fail)}
-.node.fixed rect{fill:#EDF6F1;stroke:var(--ok)}
-.edge{stroke:var(--ink);stroke-width:1.5;fill:none;transition:opacity .2s}
-.edge.off{opacity:.18}
-.edge.fallback{stroke:var(--signal-deep);stroke-dasharray:5 4;opacity:0;transition:opacity .25s}
-.edge.fallback.on{opacity:1}
-.edge.presigned{stroke:#8A9AA7;stroke-width:1.2;stroke-dasharray:2 4;opacity:.75}
-.edge.presigned.off{opacity:.15}
-.node.plain{cursor:default}
-.node.plain:hover rect{stroke:var(--ink)}
-.demo-log{
-  font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;
-  padding:14px 18px;border-top:1px solid var(--line-soft);color:var(--slate);
-  min-height:74px;
-}
-.demo-log .t-ok{color:var(--ok)}
-.demo-log .t-warn{color:var(--signal-deep)}
-.demo-log .t-fail{color:var(--fail)}
-.demo-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid var(--line-soft);flex-wrap:wrap;gap:8px}
-.demo-hint{font-size:12.5px;color:var(--slate)}
-.reset{font-family:'IBM Plex Mono',monospace;font-size:12px;background:none;border:1px solid var(--line);padding:6px 14px;cursor:pointer;color:var(--ink)}
-.reset:hover{border-color:var(--ink)}
-
-/* ---------- sections ---------- */
-section{padding:64px 0;border-bottom:1px solid var(--line)}
-.sec-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.sec-label::before{content:'';width:22px;height:1px;background:var(--signal)}
-h2{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 110;font-weight:750;font-size:clamp(24px,3.4vw,36px);letter-spacing:-.01em;margin-bottom:28px}
-
-/* now strip */
-.now-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-@media(max-width:820px){.now-grid{grid-template-columns:1fr}}
-.now-card{background:var(--panel);padding:24px 22px}
-.now-card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:10px}
-.now-card h3{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 108;font-size:18px;font-weight:700;margin-bottom:8px}
-.now-card p{font-size:14.5px;color:var(--slate)}
-.now-card a{color:var(--ink);text-decoration-color:var(--signal)}
-
-/* projects */
-.proj{border:1px solid var(--line);background:var(--panel);margin-bottom:22px;display:grid;grid-template-columns:200px 1fr;gap:0}
-@media(max-width:740px){.proj{grid-template-columns:1fr}}
-.proj-meta{padding:24px 22px;border-right:1px solid var(--line-soft);display:flex;flex-direction:column;gap:10px}
-@media(max-width:740px){.proj-meta{border-right:none;border-bottom:1px solid var(--line-soft);flex-direction:row;flex-wrap:wrap;align-items:center}}
-.proj-id{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);letter-spacing:.06em}
-.badge{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 9px;border:1px solid var(--line);color:var(--slate);width:max-content}
-.badge.win{border-color:var(--signal);color:var(--signal-deep);background:rgba(232,147,12,.07)}
-.badge.live{border-color:var(--ok);color:var(--ok);background:rgba(31,138,93,.06)}
-.proj-main{padding:24px 26px}
-.proj-main h3{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 108;font-size:21px;font-weight:750;margin-bottom:4px}
-.proj-main .sub{font-size:13.5px;color:var(--slate);font-family:'IBM Plex Mono',monospace;margin-bottom:14px}
-.proj-main p{font-size:15px;color:#33424E;margin-bottom:12px;max-width:64ch}
-.fail-note{
-  border-left:3px solid var(--signal);padding:10px 14px;background:rgba(232,147,12,.06);
-  font-size:14px;color:#5a4a22;margin:14px 0;max-width:64ch;
-}
-.fail-note b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal-deep);display:block;margin-bottom:3px}
-.stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-.stack span{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:3px 8px;background:var(--paper);border:1px solid var(--line-soft);color:var(--slate)}
-.proj-links{margin-top:14px;display:flex;gap:16px}
-.proj-links a{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--signal)}
-.proj-links a:hover{color:var(--signal-deep)}
-
-/* research */
-.research-box{border:1px solid var(--line);background:var(--panel);padding:30px 28px}
-.research-box p{max-width:68ch;color:#33424E;font-size:15px;margin-bottom:12px}
-.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:20px}
-@media(max-width:740px){.method-grid{grid-template-columns:1fr}}
-.method{background:var(--paper);padding:16px 18px}
-.method .m-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:6px}
-.method p{font-size:13.5px;color:var(--slate);margin:0}
-
-/* skills */
-.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-@media(max-width:880px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.skills-grid{grid-template-columns:1fr}}
-.skill-col{background:var(--panel);padding:20px}
-.skill-col h4{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
-.skill-col ul{list-style:none}
-.skill-col li{font-size:14px;padding:4px 0;border-bottom:1px dashed var(--line-soft);color:#33424E}
-.skill-col li:last-child{border-bottom:none}
-
-/* contact */
-.contact{padding:72px 0}
-.contact h2{max-width:22ch}
-.contact-row{display:flex;gap:28px;flex-wrap:wrap;margin-top:24px}
-.contact-row a{font-family:'IBM Plex Mono',monospace;font-size:14px;text-decoration:none;border-bottom:1px solid var(--signal);padding-bottom:2px}
-.contact-row a:hover{color:var(--signal-deep)}
-.contact-form{margin-top:34px;display:grid;gap:14px;max-width:560px}
-.contact-form input,.contact-form textarea{
-  font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:15px;
-  background:var(--panel);border:1px solid var(--line);
-  padding:13px 15px;color:var(--ink);width:100%;border-radius:2px;
-  transition:border-color .15s;
-}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--signal-deep)}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--slate)}
-.contact-form textarea{resize:vertical;min-height:120px}
-.contact-form button{
-  font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.03em;
-  padding:12px 22px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);
-  cursor:pointer;width:max-content;transition:background .15s,color .15s,border-color .15s;
-}
-.contact-form button:hover{background:var(--signal-deep);border-color:var(--signal-deep);color:#fff}
-.contact-form button:disabled{opacity:.55;cursor:default}
-.form-status{font-family:'IBM Plex Mono',monospace;font-size:12.5px;min-height:18px;margin:0}
-.form-status.ok{color:var(--ok)}
-.form-status.err{color:var(--fail)}
-footer{border-top:1px solid var(--line);padding:20px 0 36px}
-.foot-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--slate)}
-.owner-name{cursor:pointer}
-
-/* ---------- owner inbox (easter egg) ---------- */
-.admin-overlay{position:fixed;inset:0;z-index:200;background:rgba(22,33,43,.55);display:flex;align-items:flex-start;justify-content:center;padding:6vh 18px;overflow-y:auto;-webkit-font-smoothing:antialiased}
-.admin-overlay[hidden]{display:none}
-.admin-panel{width:100%;max-width:680px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 18px 50px rgba(22,33,43,.28)}
-.admin-head{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
-.admin-title{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal-deep)}
-.admin-x{background:none;border:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1;padding:5px 9px;cursor:pointer;color:var(--slate)}
-.admin-x:hover{border-color:var(--ink);color:var(--ink)}
-.admin-login{padding:26px 22px;display:grid;gap:13px;max-width:340px}
-.admin-hint{font-size:13px;color:var(--slate)}
-.admin-login input{font-family:'IBM Plex Mono',monospace;font-size:14px;background:var(--panel);border:1px solid var(--line);padding:11px 13px;color:var(--ink);border-radius:2px}
-.admin-login input:focus{outline:none;border-color:var(--signal-deep)}
-.admin-login button{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.03em;padding:11px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;width:max-content}
-.admin-login button:hover{background:var(--signal-deep);border-color:var(--signal-deep)}
-.admin-login button:disabled{opacity:.55;cursor:default}
-.admin-status{font-family:'IBM Plex Mono',monospace;font-size:12px;min-height:16px;margin:0}
-.admin-status.err{color:var(--fail)}
-.admin-status.ok{color:var(--ok)}
-.admin-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--line-soft);font-size:12px;color:var(--slate)}
-.admin-toolbar-actions{display:flex;gap:8px}
-.admin-mini{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:none;border:1px solid var(--line);padding:5px 11px;cursor:pointer;color:var(--ink)}
-.admin-mini:hover{border-color:var(--ink);background:var(--panel)}
-.admin-list{max-height:64vh;overflow-y:auto}
-.admin-empty{padding:34px 20px;text-align:center;color:var(--slate);font-family:'IBM Plex Mono',monospace;font-size:12.5px}
-.msg{padding:16px 18px;border-bottom:1px solid var(--line-soft);background:var(--paper)}
-.msg.unread{background:rgba(232,147,12,.05);border-left:3px solid var(--signal)}
-.msg-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.msg-from{font-weight:600;font-size:14.5px;color:var(--ink)}
-.msg-date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);white-space:nowrap}
-.msg-email{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--signal-deep);text-decoration:none;border-bottom:1px solid var(--line);word-break:break-all}
-.msg-email:hover{color:var(--ink)}
-.msg-body{font-size:14px;color:#33424E;margin:8px 0 0;white-space:pre-wrap;word-break:break-word}
-.msg-actions{display:flex;gap:8px;margin-top:11px}
-.msg-actions button{font-family:'IBM Plex Mono',monospace;font-size:11px;background:none;border:1px solid var(--line);padding:4px 10px;cursor:pointer;color:var(--slate)}
-.msg-actions button:hover{border-color:var(--ink);color:var(--ink)}
-.msg-actions .del:hover{border-color:var(--fail);color:var(--fail)}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>swapneel.premchand</a>
-    <nav aria-label="Main">
-      <a href="#now">Now</a>
-      <a href="#work">Work</a>
-      <a href="#research">Research</a>
-      <a href="#skills">Stack</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</div>
+<a class="skip" href="#work">Skip to the work</a>
 
-<header class="hero" id="top">
-  <div class="wrap">
-    <p class="eyebrow">Swapneel Premchand · CS + AI @ Plaksha University · <b>Mohali, IN</b></p>
-    <h1>I build AI systems for when things <span class="break-word">break</span> — not just when they work.</h1>
-    <p class="hero-sub">Production SaaS serving <strong>4 paying schools</strong>. Causal inference research on real patient data. Hackathon-winning pipelines that ship with <strong>fallbacks, guardrails, and graceful degradation</strong> — because demos run on the happy path, and the real world doesn't.</p>
-    <div class="hero-cta">
-      <a class="btn" href="#work">See the work</a>
-      <a class="btn ghost" href="#contact">Get in touch</a>
-    </div>
+<!-- boot: prints one line, then the night fades in (skipped on repeat visits) -->
+<div class="boot" id="boot" aria-hidden="true"><span class="boot-line" id="boot-line"></span><span class="caret"></span></div>
 
-    <!-- signature: kill-a-node demo -->
-    <div class="demo" id="demo">
-      <div class="demo-head">
-        <span class="demo-title">Tulips.edu — production topology, as deployed</span>
-        <span class="demo-status"><span class="sdot" aria-hidden="true"></span><span id="status-text">ALL SYSTEMS OPERATIONAL</span></span>
-      </div>
-      <div class="demo-body">
-        <svg viewBox="0 0 920 252" role="img" aria-label="Interactive diagram of Tulips.edu production architecture. Click the API, Postgres, or R2 component to simulate its failure and see the real degradation behavior.">
-          <!-- primary edges -->
-          <path class="edge" id="e1" d="M150 110 H 205"/>
-          <path class="edge" id="e2" d="M330 110 H 385"/>
-          <path class="edge" id="e3" d="M510 110 H 565"/>
-          <path class="edge" id="e4" d="M695 110 H 750"/>
-          <!-- presigned uploads: client direct to R2, never via app server -->
-          <path class="edge presigned" id="e-r2" d="M90 140 V 215 H 555"/>
-          <!-- offline fallback: IndexedDB queue loop at client -->
-          <path class="edge fallback" id="f-queue" d="M90 80 V 34 H 260 V 34"/>
-          <!-- arrowheads -->
-          <polygon points="205,110 197,105 197,115" fill="#16212B"/>
-          <polygon points="385,110 377,105 377,115" fill="#16212B"/>
-          <polygon points="565,110 557,105 557,115" fill="#16212B"/>
-          <polygon points="750,110 742,105 742,115" fill="#16212B"/>
-
-          <g class="node plain" data-id="client">
-            <rect x="30" y="80" width="120" height="60" rx="2"/>
-            <text x="90" y="105" text-anchor="middle">CLIENT</text>
-            <text x="90" y="122" text-anchor="middle" class="sub">Preact SPA</text>
-          </g>
-          <g class="node plain" data-id="cf">
-            <rect x="205" y="80" width="125" height="60" rx="2"/>
-            <text x="267" y="105" text-anchor="middle">CLOUDFLARE</text>
-            <text x="267" y="122" text-anchor="middle" class="sub">CDN + DNS</text>
-          </g>
-          <g class="node plain" data-id="nginx">
-            <rect x="385" y="80" width="125" height="60" rx="2"/>
-            <text x="447" y="105" text-anchor="middle">NGINX</text>
-            <text x="447" y="122" text-anchor="middle" class="sub">TLS + SPA routing</text>
-          </g>
-          <g class="node" data-id="api" tabindex="0" role="button" aria-label="FastAPI application server — click to simulate failure">
-            <rect x="565" y="80" width="130" height="60" rx="2"/>
-            <text x="630" y="105" text-anchor="middle">API</text>
-            <text x="630" y="122" text-anchor="middle" class="sub">FastAPI · Gunicorn</text>
-          </g>
-          <g class="node" data-id="pg" tabindex="0" role="button" aria-label="PostgreSQL database — click to simulate failure">
-            <rect x="750" y="80" width="140" height="60" rx="2"/>
-            <text x="820" y="105" text-anchor="middle">POSTGRES</text>
-            <text x="820" y="122" text-anchor="middle" class="sub">system of record</text>
-          </g>
-          <g class="node" data-id="r2" tabindex="0" role="button" aria-label="Cloudflare R2 object storage — click to simulate failure">
-            <rect x="555" y="190" width="150" height="50" rx="2"/>
-            <text x="630" y="211" text-anchor="middle">R2</text>
-            <text x="630" y="227" text-anchor="middle" class="sub">object storage</text>
-          </g>
-
-          <!-- labels -->
-          <text x="320" y="232" text-anchor="middle" style="font-family:'IBM Plex Mono',monospace;font-size:10px;fill:#8A9AA7">presigned uploads — direct to R2, never via the app server</text>
-          <text id="lbl-queue" x="175" y="24" text-anchor="middle" style="font-family:'IBM Plex Mono',monospace;font-size:10px;fill:#B36F04;opacity:0;transition:opacity .25s">IndexedDB queue → background sync</text>
-        </svg>
-      </div>
-      <div class="demo-log" id="log" aria-live="polite"><span class="t-ok">[ok]</span> all components answering. multi-tenant, event-sourced, 4 schools in production.</div>
-      <div class="demo-foot">
-        <span class="demo-hint">Click API, Postgres, or R2 to take it down. The log describes what actually happens in production — including the failure with no graceful path.</span>
-        <button class="reset" id="reset-btn" type="button">Restore all</button>
-      </div>
-    </div>
-  </div>
+<!-- ───────────── nav ───────────── -->
+<header class="nav" id="nav">
+  <a class="nav-mark" href="#top">swapneel<span class="dot">.</span></a>
+  <nav class="nav-links" aria-label="Sections">
+    <a href="#work">work</a>
+    <a href="#research">research</a>
+    <a href="#off-clock">off the clock</a>
+    <a href="#pictures">pictures</a>
+  </nav>
+  <button class="btn-bubble" type="button" data-open-contact>
+    <span class="btn-bubble-label">Get in touch</span>
+    <span class="btn-bubble-arrow" aria-hidden="true"><i></i></span>
+  </button>
 </header>
 
-<section id="now">
-  <div class="wrap">
-    <p class="sec-label">Currently running</p>
-    <h2>Three things, in parallel</h2>
-    <div class="now-grid">
-      <div class="now-card">
-        <p class="tag">Production SaaS · Founder</p>
-        <h3>Tulips.edu</h3>
-        <p>School ERP serving <strong>4 paying institutions</strong> — admissions, fees, academics, communication. Self-hosted on a VPS behind Cloudflare. I own uptime, backups, and the 2&nbsp;a.m. pages. Two semesters of college, two years of production responsibility.</p>
-      </div>
-      <div class="now-card">
-        <p class="tag">Research Assistant · Causal inference</p>
-        <h3>Continuity of Care</h3>
-        <p>RA with <strong>Prof. Anuj Kapoor</strong> (University of Missouri), estimating the causal value of care continuity on a digital physiotherapy platform — provider-exit shocks as quasi-experiments, staggered DiD, causal ML.</p>
-      </div>
-      <div class="now-card">
-        <p class="tag">From Aug 2026</p>
-        <h3>AWS Student Builder Campus Leader</h3>
-        <p>Selected for the <strong>2026 AWS Global University Program</strong> — driving AWS Builder adoption on campus through demos, technical articles, and peer-to-peer events.</p>
-      </div>
+<main id="top">
+
+<!-- ───────────── 1 · hero: the night ───────────── -->
+<section class="hero" aria-label="Introduction">
+  <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="hero-copy">
+    <p class="px-label hero-kicker">▸ CS + AI @ Plaksha University · Founder, Tulips.edu</p>
+    <h1 class="hero-name">Swapneel<span class="dot">.</span></h1>
+    <p class="hero-line">builds systems for when things <em>break</em> — not just when they work.</p>
+
+    <ul class="tapes" aria-label="In four lines">
+      <li class="tape" style="--r:-3deg;--d:0">engineer by day,</li>
+      <li class="tape" style="--r:2deg;--d:1">philosopher by night,</li>
+      <li class="tape" style="--r:-1.5deg;--d:2">musician by choice,</li>
+      <li class="tape" style="--r:3deg;--d:3">rebel by fate.</li>
+    </ul>
+
+    <div class="hero-actions">
+      <a class="btn-px" href="#work">See the work</a>
+      <button class="btn-px btn-px--ghost" type="button" data-open-contact>Get in touch</button>
     </div>
   </div>
+
+  <p class="hero-status px-label" aria-label="Status">
+    <span class="led"></span><span>4 schools in production</span><span class="sep">·</span><span class="more">causal inference RA</span><span class="sep">·</span><span class="more">AWS campus leader</span>
+  </p>
+  <a class="hero-scroll px-label" href="#about">scroll to wander <span aria-hidden="true">▼</span></a>
 </section>
 
-<section id="work">
-  <div class="wrap">
-    <p class="sec-label">Selected work</p>
-    <h2>Built to survive contact with production</h2>
+<!-- ───────────── 2 · about ───────────── -->
+<section class="about wrap" id="about">
+  <div class="about-text reveal">
+    <p class="eyebrow">while I breathe, I hope —</p>
+    <h2 class="display">dum spiro, spero<span class="dot">.</span></h2>
+    <p class="lede">I'm Swapneel — a CS + AI student at Plaksha University who ended up running production software before finishing college. I founded <strong>Tulips.edu</strong>, a school ERP that four schools pay for, and I'm the one who gets the 2&nbsp;a.m. page when something breaks.</p>
+    <p>That changed how I build. Demos run on the happy path; the real world doesn't. So I design for the failure first — offline queues, fallbacks, guardrails, confidence scores instead of confident guesses.</p>
+    <p>Away from the terminal I wander: mountains when I can reach them, books when I can't. I write poems and short stories, play guitar, and I've been a Poké-nerd since the DS days.</p>
 
-    <article class="proj">
-      <div class="proj-meta">
-        <span class="proj-id">PRJ—01</span>
-        <span class="badge live">IN PRODUCTION</span>
-        <span class="badge">SaaS</span>
-      </div>
-      <div class="proj-main">
-        <h3>Tulips.edu</h3>
-        <p class="sub">school ERP · 4 paying institutional clients</p>
-        <p>Multi-tenant school ERP: student records, fees (UPI deep links + QR), academics, and parent communication across three surfaces — public site, staff ERP, parent portal — on one SPA. Tenant isolation is enforced in middleware with <code style="font-family:'IBM Plex Mono',monospace;font-size:13px">tenant_id</code> on every table; every API route is role-checked across five roles; every state change emits an immutable audit event.</p>
-        <div class="fail-note"><b>Failure-mode thinking</b>The most frequent failure in an Indian school isn't the server — it's the teacher's connectivity. Attendance is offline-first: writes queue in IndexedDB and background-sync on recovery. File uploads go direct to R2 via presigned URLs, so storage failures never touch the app server. Migrations are raw versioned SQL, because schemas holding fee records don't get ORM surprises.</div>
-        <div class="stack"><span>FastAPI · Python 3.11</span><span>PostgreSQL + asyncpg</span><span>Preact + TypeScript</span><span>Docker Compose</span><span>nginx</span><span>Cloudflare + R2</span><span>Gunicorn/Uvicorn</span></div>
-        <div class="proj-links"><a href="https://tulipsedu.in" target="_blank" rel="noopener">Visit site ↗</a></div>
-      </div>
-    </article>
-
-    <article class="proj">
-      <div class="proj-meta">
-        <span class="proj-id">PRJ—02</span>
-        <span class="badge">OPEN SOURCE</span>
-        <span class="badge">Dev tool</span>
-      </div>
-      <div class="proj-main">
-        <h3>SxQLear</h3>
-        <p class="sub">database intelligence &amp; archaeology tool</p>
-        <p>Born from a real problem: dropped into a 107-table production database with no documentation as a research assistant. SxQLear crawls and semantically maps unfamiliar SQL databases — a multi-signal inference engine (structural, lexical, statistical, semantic) proposes join relationships with confidence scores, and schema memory accumulates per project.</p>
-        <div class="fail-note"><b>Failure-mode thinking</b>Local-first by design: no cloud dependency, no data leaves the machine. Confidence scores instead of confident guesses — the tool says how sure it is.</div>
-        <div class="stack"><span>Python</span><span>FastAPI</span><span>React</span><span>Embeddings</span><span>Schema inference</span><span>SQLAlchemy</span></div>
-        <div class="proj-links"><a href="https://github.com/Sw4ppleneel/SxQLear" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </div>
-    </article>
-
-    <article class="proj">
-      <div class="proj-meta">
-        <span class="proj-id">PRJ—03</span>
-        <span class="badge win">1ST / 450 TEAMS</span>
-        <span class="badge">Medical AI</span>
-      </div>
-      <div class="proj-main">
-        <h3>Asclepius</h3>
-        <p class="sub">clinical intelligence engine · Hack-n-Win 3.0</p>
-        <p>Multimodal pipeline for brain tumor progression analysis: a Temporal Cognition Engine runs delta analysis across longitudinal MRI scans, and a RAG layer (MongoDB Atlas + Gemini 2.5 Flash) generates therapy reports. Data ingestion is automated with multi-agent validation.</p>
-        <div class="fail-note"><b>Failure-mode thinking</b>Graceful degradation built in: if the vector layer fails, the system falls back to preserved deterministic paths instead of returning nothing — reliability as a first-class feature, in a medical context where silence is harm.</div>
-        <div class="stack"><span>PyTorch</span><span>MongoDB Atlas</span><span>Gemini 2.5 Flash</span><span>RAG</span><span>Multi-agent</span></div>
-        <div class="proj-links"><a href="https://github.com/ReservedSnow673/AsclepiusAI" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </div>
-    </article>
-
-    <article class="proj">
-      <div class="proj-meta">
-        <span class="proj-id">PRJ—04</span>
-        <span class="badge win">2ND / 30 TEAMS</span>
-        <span class="badge">Medical AI</span>
-      </div>
-      <div class="proj-main">
-        <h3>Paeon AI</h3>
-        <p class="sub">AI-powered digital medical representative · Plaksha MediThon</p>
-        <p>A medical information platform with structured retrieval over CDSCO and FDA drug datasets, a Twilio voice interface for conversational access, and a hybrid answer pipeline: deterministic retrieval first, Gemini 2.0 Flash as fallback.</p>
-        <div class="fail-note"><b>Failure-mode thinking</b>Guardrails prevent diagnostic or unsafe outputs entirely — the system is designed around what it must never say, not just what it can.</div>
-        <div class="stack"><span>FastAPI</span><span>React</span><span>Vercel</span><span>Twilio</span><span>Gemini 2.0 Flash</span><span>Guardrails</span></div>
-        <div class="proj-links"><a href="https://github.com/Sw4ppleneel/paeon-med" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </div>
-    </article>
+    <div class="now">
+      <p class="px-label now-title">now —</p>
+      <ul>
+        <li><span class="px-label">founder</span> Tulips.edu · 4 paying schools, I own uptime, backups and the pager</li>
+        <li><span class="px-label">research</span> RA with Prof. Anuj Kapoor (Univ. of Missouri) · causal inference on care continuity</li>
+        <li><span class="px-label">from aug '26</span> AWS Student Builder Campus Leader · 2026 Global University Program</li>
+      </ul>
+    </div>
   </div>
+
+  <!-- his own dex entry -->
+  <aside class="dex reveal" aria-label="Field entry">
+    <div class="dex-top">
+      <span class="dex-lens" aria-hidden="true"></span>
+      <span class="dex-leds" aria-hidden="true"><i></i><i></i><i></i></span>
+    </div>
+    <div class="dex-screen">
+      <canvas class="dex-sprite" id="dex-sprite" width="32" height="40" aria-hidden="true"></canvas>
+      <div class="dex-id">
+        <p class="px-label">No.001</p>
+        <p class="dex-name">SWAPNEEL</p>
+        <p class="px-label dex-kind">the Wandering Engineer</p>
+        <p class="dex-types"><span class="type type--tech">TECH</span><span class="type type--psy">PSYCHIC</span></p>
+      </div>
+    </div>
+    <dl class="dex-facts px-label">
+      <div><dt>ability</dt><dd>Graceful Degradation</dd></div>
+      <div><dt>hidden ability</dt><dd>2 a.m. Pager</dd></div>
+      <div><dt>habitat</dt><dd>terminals, mountain roads</dd></div>
+    </dl>
+    <p class="dex-entry">Often found at night, building systems that refuse to fall over. Carries a guitar. Has never lost to a bug for long.</p>
+    <ul class="dex-stats" aria-label="Base stats">
+      <li><span class="px-label">schools in prod</span><b style="--v:.8"></b><em>4</em></li>
+      <li><span class="px-label">hack-n-win 3.0</span><b style="--v:1"></b><em>1st / 450</em></li>
+      <li><span class="px-label">plaksha medithon</span><b style="--v:.9"></b><em>2nd</em></li>
+      <li><span class="px-label">years on call</span><b style="--v:.55"></b><em>2</em></li>
+    </ul>
+  </aside>
 </section>
 
-<section id="research">
-  <div class="wrap">
-    <p class="sec-label">Research</p>
-    <h2>Causal inference on real-world health data</h2>
-    <div class="research-box">
+<!-- ───────────── 3 · work ───────────── -->
+<section class="work wrap" id="work">
+  <header class="section-head reveal">
+    <p class="eyebrow">built to survive contact with production</p>
+    <h2 class="display">the work<span class="dot">.</span></h2>
+  </header>
+
+  <!-- PRJ 01 -->
+  <article class="project reveal" aria-labelledby="p1">
+    <div class="project-side">
+      <p class="px-label">PRJ—01</p>
+      <canvas class="project-icon" data-icon="bell" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:-2deg">in production</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="p1">Tulips.edu</h3>
+      <p class="project-pitch">school ERP · 4 paying institutional clients</p>
+      <p>Multi-tenant school ERP: student records, fees (UPI deep links + QR), academics and parent communication across three surfaces — public site, staff ERP, parent portal — on one SPA. Tenant isolation is enforced in middleware with <code>tenant_id</code> on every table; every API route is role-checked across five roles; every state change emits an immutable audit event.</p>
+      <div class="failure">
+        <p class="px-label failure-title">failure-mode thinking</p>
+        <p>The most frequent failure in an Indian school isn't the server — it's the teacher's connectivity. Attendance is offline-first: writes queue in IndexedDB and background-sync on recovery. Uploads go direct to R2 via presigned URLs, so storage failures never touch the app server. Migrations are raw versioned SQL, because schemas holding fee records don't get ORM surprises.</p>
+      </div>
+      <ul class="tags px-label"><li>FastAPI · Python 3.11</li><li>PostgreSQL + asyncpg</li><li>Preact + TypeScript</li><li>Docker Compose</li><li>nginx</li><li>Cloudflare + R2</li></ul>
+      <a class="link-px" href="https://tulipsedu.in" target="_blank" rel="noopener">visit tulipsedu.in ↗</a>
+    </div>
+  </article>
+
+  <!-- the pixel topology demo -->
+  <figure class="topo reveal" id="topo" aria-labelledby="topo-cap">
+    <figcaption id="topo-cap" class="topo-head">
+      <span class="px-label">Tulips.edu — production topology, as deployed</span>
+      <span class="topo-status px-label" id="topo-status"><span class="led"></span><span id="topo-status-text">ALL SYSTEMS OPERATIONAL</span></span>
+    </figcaption>
+    <div class="topo-stage" id="topo-stage">
+      <svg class="topo-wires" id="topo-wires" aria-hidden="true"></svg>
+      <div class="node" data-id="client" style="--x:0;--y:0"><canvas width="16" height="16" data-icon="phone"></canvas><span>teachers' phones</span></div>
+      <div class="node" data-id="cf" style="--x:1;--y:0"><canvas width="16" height="16" data-icon="cloud"></canvas><span>cloudflare</span></div>
+      <button class="node node--hit" type="button" data-id="api" style="--x:2;--y:0" aria-pressed="false"><canvas width="16" height="16" data-icon="server"></canvas><span>api</span></button>
+      <button class="node node--hit" type="button" data-id="pg" style="--x:3;--y:0" aria-pressed="false"><canvas width="16" height="16" data-icon="db"></canvas><span>postgres</span></button>
+      <div class="node node--queue" data-id="queue" style="--x:0;--y:1"><canvas width="16" height="16" data-icon="queue"></canvas><span>indexeddb queue</span></div>
+      <button class="node node--hit" type="button" data-id="r2" style="--x:2;--y:1" aria-pressed="false"><canvas width="16" height="16" data-icon="bucket"></canvas><span>r2 storage</span></button>
+    </div>
+    <div class="dialog topo-log" aria-live="polite"><p id="topo-log"></p><span class="dialog-more" aria-hidden="true">▼</span></div>
+    <div class="topo-foot">
+      <p class="topo-hint">Knock out <b>api</b>, <b>postgres</b> or <b>r2</b>. The log says what actually happens in production — including the one failure with no graceful path.</p>
+      <button class="link-px" type="button" id="topo-reset">restore all</button>
+    </div>
+  </figure>
+
+  <!-- PRJ 02 -->
+  <article class="project reveal" aria-labelledby="p2">
+    <div class="project-side">
+      <p class="px-label">PRJ—02</p>
+      <canvas class="project-icon" data-icon="lens" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:1.5deg">open source</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="p2">SxQLear</h3>
+      <p class="project-pitch">database intelligence &amp; archaeology tool</p>
+      <p>Born from a real problem: dropped into a 107-table production database with no documentation as a research assistant. SxQLear crawls and semantically maps unfamiliar SQL databases — a multi-signal inference engine (structural, lexical, statistical, semantic) proposes join relationships with confidence scores, and schema memory accumulates per project.</p>
+      <div class="failure">
+        <p class="px-label failure-title">failure-mode thinking</p>
+        <p>Local-first by design: no cloud dependency, no data leaves the machine. Confidence scores instead of confident guesses — the tool says how sure it is, and asks a human before it believes itself.</p>
+      </div>
+      <ul class="tags px-label"><li>Python</li><li>FastAPI</li><li>React</li><li>Embeddings</li><li>Schema inference</li><li>SQLAlchemy</li></ul>
+      <a class="link-px" href="https://github.com/Sw4ppleneel/SxQLear" target="_blank" rel="noopener">github ↗</a>
+    </div>
+  </article>
+
+  <!-- PRJ 03 -->
+  <article class="project reveal" aria-labelledby="p3">
+    <div class="project-side">
+      <p class="px-label">PRJ—03</p>
+      <canvas class="project-icon" data-icon="brain" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:-1deg">1st / 450+ teams</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="p3">Asclepius</h3>
+      <p class="project-pitch">clinical intelligence engine · Hack-n-Win 3.0, CGC University · with Team Deranked</p>
+      <p>Multimodal pipeline for brain-tumour progression analysis: a Temporal Cognition Engine runs delta analysis across longitudinal MRI scans, and a RAG layer (MongoDB Atlas + Gemini 2.5 Flash) generates therapy reports. Ingestion is automated with multi-agent validation. Took first place out of 450+ teams — and second for best use of MongoDB.</p>
+      <div class="failure">
+        <p class="px-label failure-title">failure-mode thinking</p>
+        <p>Graceful degradation built in: if the vector layer fails, the system falls back to preserved deterministic paths instead of returning nothing — in a medical context, silence is harm.</p>
+      </div>
+      <ul class="tags px-label"><li>PyTorch</li><li>MongoDB Atlas</li><li>Gemini 2.5 Flash</li><li>RAG</li><li>Multi-agent</li></ul>
+      <a class="link-px" href="https://github.com/ReservedSnow673/AsclepiusAI" target="_blank" rel="noopener">github ↗</a>
+    </div>
+  </article>
+
+  <!-- PRJ 04 -->
+  <article class="project reveal" aria-labelledby="p4">
+    <div class="project-side">
+      <p class="px-label">PRJ—04</p>
+      <canvas class="project-icon" data-icon="pill" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:2deg">1st runner-up</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="p4">Paeon AI</h3>
+      <p class="project-pitch">compliance-first digital medical representative · Plaksha MediThon 2026</p>
+      <p>Real-time, source-verified drug intelligence for pharma reps and clinicians at the point of care: structured retrieval over CDSCO and FDA datasets, a Twilio voice interface, and a hybrid pipeline — deterministic retrieval first, Gemini as fallback. Built in 24 hours; first runner-up.</p>
+      <div class="failure">
+        <p class="px-label failure-title">failure-mode thinking</p>
+        <p>Designed around what it must never say: guardrails block diagnostic or unsafe outputs entirely, and every answer is auditable back to its source.</p>
+      </div>
+      <ul class="tags px-label"><li>FastAPI</li><li>React</li><li>Vercel</li><li>Twilio</li><li>Gemini 2.0 Flash</li><li>Guardrails</li></ul>
+      <a class="link-px" href="https://github.com/Sw4ppleneel/paeon-med" target="_blank" rel="noopener">github ↗</a>
+    </div>
+  </article>
+</section>
+
+<!-- ───────────── 4 · research ───────────── -->
+<section class="research wrap" id="research">
+  <header class="section-head reveal">
+    <p class="eyebrow">causal inference on real-world health data</p>
+    <h2 class="display">research<span class="dot">.</span></h2>
+  </header>
+  <div class="research-grid reveal">
+    <div class="abstract">
+      <p class="px-label">abstract</p>
       <p><strong>Continuity of Care on Digital Health Platforms</strong> — research assistantship with Prof. Anuj Kapoor (University of Missouri), on a large-scale digital physiotherapy dataset.</p>
       <p>When a physiotherapist exits unexpectedly, it breaks a patient's care mid-episode. These provider-side shocks are plausibly exogenous — clean variation for asking how much continuity causally matters, and for whom. The hard part: the treatment is a path through an adaptive system, where standard regression breaks down.</p>
       <p>My work spans the identification strategy and the estimation pipeline — including pressure-testing parallel-trends assumptions across two difference-in-differences designs and validating dose-response gradients.</p>
-      <div class="method-grid">
-        <div class="method"><p class="m-tag">Identification</p><p>Staggered DiD (Callaway–Sant'Anna), provider exits as instruments, discrete-time hazard models.</p></div>
-        <div class="method"><p class="m-tag">Causal ML</p><p>Double/debiased ML, causal forests, R-/DR-learners for heterogeneous treatment effects across patient fragility dimensions.</p></div>
-        <div class="method"><p class="m-tag">Sequence models</p><p>Transformer encoders over care trajectories, counterfactual RNNs, representation balancing (TARNet/CFRNet).</p></div>
+    </div>
+    <dl class="methods">
+      <div><dt class="px-label">identification</dt><dd>Staggered DiD (Callaway–Sant'Anna), provider exits as instruments, discrete-time hazard models.</dd></div>
+      <div><dt class="px-label">causal ml</dt><dd>Double/debiased ML, causal forests, R-/DR-learners for heterogeneous effects across patient fragility.</dd></div>
+      <div><dt class="px-label">sequence models</dt><dd>Transformer encoders over care trajectories, counterfactual RNNs, representation balancing (TARNet/CFRNet).</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ───────────── 5 · off the clock ───────────── -->
+<section class="offclock wrap" id="off-clock">
+  <header class="section-head reveal">
+    <p class="tape" style="--r:-2deg">jack of all trades, master of none…</p>
+    <p class="tape tape--late" style="--r:1.5deg">…but oftentimes better than master of one.</p>
+    <h2 class="display">off the clock<span class="dot">.</span></h2>
+  </header>
+
+  <div class="inv reveal">
+    <div class="inv-grid" role="tablist" aria-label="Inventory">
+      <button class="inv-slot" role="tab" type="button" data-slot="reads" aria-selected="true"><canvas width="16" height="16" data-icon="book"></canvas><span class="px-label">reads</span></button>
+      <button class="inv-slot" role="tab" type="button" data-slot="writes" aria-selected="false"><canvas width="16" height="16" data-icon="quill"></canvas><span class="px-label">writes</span></button>
+      <button class="inv-slot" role="tab" type="button" data-slot="guitar" aria-selected="false"><canvas width="16" height="16" data-icon="guitar"></canvas><span class="px-label">guitar</span></button>
+      <button class="inv-slot" role="tab" type="button" data-slot="games" aria-selected="false"><canvas width="16" height="16" data-icon="ds"></canvas><span class="px-label">games</span></button>
+      <button class="inv-slot" role="tab" type="button" data-slot="anime" aria-selected="false"><canvas width="16" height="16" data-icon="tv"></canvas><span class="px-label">anime</span></button>
+      <button class="inv-slot" role="tab" type="button" data-slot="wander" aria-selected="false"><canvas width="16" height="16" data-icon="peak"></canvas><span class="px-label">wander</span></button>
+    </div>
+
+    <div class="inv-panels">
+      <div class="dialog inv-panel" role="tabpanel" data-panel="reads">
+        <p class="px-label panel-title">▸ the shelf</p>
+        <ul class="shelf">
+          <li style="--c:#b8742a"><b>The Alchemist</b><span>Paulo Coelho — follow the omens; the road is the treasure.</span></li>
+          <li style="--c:#e0e0d4;--t:#1a1a1a"><b>The Subtle Art of Not Giving a F*ck</b><span>Mark Manson — choose what's worth caring about.</span></li>
+          <li style="--c:#5b6b3a"><b>To Kill a Mockingbird</b><span>Harper Lee — courage is doing right when you know you'll lose.</span></li>
+        </ul>
+        <p class="px-label shelf-more-title">…and the shelf keeps going</p>
+        <ul class="shelf-more">
+          <li><b>The God Equation</b> — Michio Kaku <span class="heart" aria-label="loved">♥</span></li>
+          <li><b>Diary of a Wimpy Kid</b> — the whole series, still my favourite</li>
+          <li><b>It Ends With Us</b> · <b>It Starts With Us</b> · <b>Verity</b> — Colleen Hoover</li>
+        </ul>
+      </div>
+      <div class="dialog inv-panel" role="tabpanel" data-panel="writes" hidden>
+        <p class="px-label panel-title">▸ the notebook</p>
+        <p class="panel-serif">Poetry and short stories — mostly written at night, mostly about roads, people, and the quiet after something breaks.</p>
+        <p class="panel-note">The notebook stays private for now. Ask me for one — I usually say yes.</p>
+      </div>
+      <div class="dialog inv-panel" role="tabpanel" data-panel="guitar" hidden>
+        <p class="px-label panel-title">▸ strum it</p>
+        <div class="strat" id="strat" role="group" aria-label="Six guitar strings — tap or hover to play">
+          <canvas class="strat-body" id="strat-body" width="96" height="36" aria-hidden="true"></canvas>
+          <div class="strings" id="strings"></div>
+        </div>
+        <p class="panel-note">Hover or tap across the strings. It's an open G — the chord most of my songs start on.</p>
+      </div>
+      <div class="dialog inv-panel" role="tabpanel" data-panel="games" hidden>
+        <p class="px-label panel-title">▸ player 1</p>
+        <div class="ds" id="ds">
+          <div class="ds-screen ds-screen--top"><canvas id="ds-top" width="64" height="40" aria-hidden="true"></canvas></div>
+          <div class="ds-hinge" aria-hidden="true"></div>
+          <div class="ds-screen ds-screen--bottom"><p class="ds-text" id="ds-text"></p></div>
+        </div>
+        <p class="px-label shelf-more-title">save file</p>
+        <ul class="saves">
+          <li><b>BGMI</b><span>my night-gaming love</span></li>
+          <li><b>Age of Mythology</b><span>greek myth &amp; philosophy, my weakness</span></li>
+          <li><b>The Witcher series</b></li>
+          <li><b>Prince of Persia</b></li>
+          <li><b>NFS Most Wanted</b></li>
+          <li><b>GTA series</b></li>
+          <li><b>Project IGI</b></li>
+          <li><b>Road Rash</b></li>
+          <li><b>CS:GO</b></li>
+          <li><b>Clash games</b></li>
+          <li><b>Brawl Stars</b></li>
+          <li><b>Pokémon</b><span>since the DS days</span></li>
+        </ul>
+      </div>
+      <div class="dialog inv-panel" role="tabpanel" data-panel="anime" hidden>
+        <p class="px-label panel-title">▸ watchlist</p>
+        <ul class="watch">
+          <li><b>Violet Evergarden</b><span>a soldier learning what three words mean, one letter at a time. the reason I write.</span></li>
+          <li><b>Vinland Saga</b><span>"I have no enemies." — strength that chooses not to be cruel.</span></li>
+          <li><b>Jujutsu Kaisen</b><span>Gojo: be the strongest in the room, and spend it on your people.</span></li>
+        </ul>
+        <p class="px-label shelf-more-title">the full log — 83 titles and counting</p>
+        <ul class="anime-log"><li>Fullmetal Alchemist: Brotherhood</li><li>Frieren</li><li>Vinland Saga</li><li>That Time I Got Reincarnated as a Slime</li><li>Oshi no Ko</li><li>Mushoku Tensei</li><li>JoJo's Bizarre Adventure</li><li>Gintama</li><li>Black Clover</li><li>Berserk</li><li>My Happy Marriage</li><li>Vagabond</li><li>One Piece</li><li>The Eminence in Shadow</li><li>Dr. Stone</li><li>Buddy Daddies</li><li>Shikimori's Not Just a Cutie</li><li>Hunter × Hunter</li><li>Toilet-Bound Hanako-kun</li><li>Tokyo Revengers</li><li>Fire Force</li><li>Nisekoi</li><li>Angel Beats!</li><li>Spy × Family</li><li>Tower of God</li><li>The Daily Life of the Immortal King</li><li>Hell's Paradise</li><li>Kakegurui</li><li>My Little Monster</li><li>Tomodachi Game</li><li>Monster</li><li>Parasyte</li><li>Food Wars!</li><li>SK8 the Infinity</li><li>Rent-a-Girlfriend</li><li>The Disastrous Life of Saiki K.</li><li>Horimiya</li><li>Bungo Stray Dogs</li><li>The Way of the Househusband</li><li>Gurren Lagann</li><li>Wonder Egg Priority</li><li>Noragami</li><li>Tokyo Ghoul</li><li>Darling in the Franxx</li><li>Violet Evergarden</li><li>Miss Kobayashi's Dragon Maid</li><li>Kaguya-sama: Love Is War</li><li>Cowboy Bebop</li><li>Angels of Death</li><li>Steins;Gate</li><li>Anohana</li><li>Erased</li><li>Monogatari</li><li>Great Pretender</li><li>Neon Genesis Evangelion</li><li>Bleach</li><li>Re:Zero</li><li>Classroom of the Elite</li><li>Highschool of the Dead</li><li>Another</li><li>My Hero Academia</li><li>Naruto</li><li>Boruto</li><li>Assassination Classroom</li><li>Attack on Titan</li><li>Love, Chunibyo &amp; Other Delusions</li><li>Code Geass</li><li>Deadman Wonderland</li><li>Sword Art Online</li><li>The Seven Deadly Sins</li><li>No Game No Life</li><li>My Dress-Up Darling</li><li>Kuroko's Basketball</li><li>Beyond the Boundary</li><li>DanMachi</li><li>Haikyuu!!</li><li>Jujutsu Kaisen</li><li>Seraph of the End</li><li>Mob Psycho 100</li><li>Death Parade</li><li>The Promised Neverland</li><li>Demon Slayer</li><li>To Your Eternity</li></ul>
+      </div>
+      <div class="dialog inv-panel" role="tabpanel" data-panel="wander" hidden>
+        <p class="px-label panel-title">▸ field notes</p>
+        <p class="panel-serif">"difficult roads truly lead to beautiful places."</p>
+        <p class="panel-note">Spiti Valley, Dharamshala, and whatever road is next.</p>
+        <a class="link-px" href="#pictures">open the pictures ↓</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <div class="wrap">
-    <p class="sec-label">Stack</p>
-    <h2>Tools I reach for</h2>
-    <div class="skills-grid">
-      <div class="skill-col">
-        <h4>Core</h4>
-        <ul><li>Python</li><li>C++</li><li>SQL</li><li>Git</li></ul>
-      </div>
-      <div class="skill-col">
-        <h4>AI / ML</h4>
-        <ul><li>PyTorch</li><li>Scikit-learn · XGBoost</li><li>RAG pipelines</li><li>AI guardrails · embeddings</li></ul>
-      </div>
-      <div class="skill-col">
-        <h4>Backend &amp; Cloud</h4>
-        <ul><li>FastAPI</li><li>Docker</li><li>JWT (OAuth2)</li><li>SQLAlchemy · Alembic</li></ul>
-      </div>
-      <div class="skill-col">
-        <h4>Data</h4>
-        <ul><li>PostgreSQL</li><li>MongoDB Atlas (Vector)</li><li>SQLite</li><li>pandas · statsmodels</li></ul>
-      </div>
-    </div>
+<!-- ───────────── 6 · pictures (the ring) ───────────── -->
+<section class="pictures" id="pictures" aria-labelledby="pics-title">
+  <header class="pics-head wrap">
+    <h2 class="pics-title" id="pics-title">
+      <span class="w">difficult</span> <span class="w">roads</span> <span class="w">truly</span> <span class="w">lead</span> <span class="w">to</span> <span class="w">beautiful</span> <span class="w">places<span class="dot">.</span></span>
+    </h2>
+    <p class="px-label pics-sub">— spiti valley, jul '26 · drag the ring, click a frame</p>
+  </header>
+  <div class="ring-stage" id="ring-stage">
+    <div class="ring" id="ring"></div>
+  </div>
+  <p class="pics-foot wrap"><span>viva la vida<span class="dot">.</span></span></p>
+</section>
+
+<!-- ───────────── 7 · stack ───────────── -->
+<section class="stack wrap" id="stack">
+  <header class="section-head reveal">
+    <p class="eyebrow">tools I reach for</p>
+    <h2 class="display">moves learned<span class="dot">.</span></h2>
+  </header>
+  <div class="moves reveal">
+    <div class="moveset"><p class="px-label"><span class="type type--tech">CORE</span></p><ul><li>Python</li><li>C++</li><li>SQL</li><li>Git</li></ul></div>
+    <div class="moveset"><p class="px-label"><span class="type type--psy">AI / ML</span></p><ul><li>PyTorch</li><li>Scikit-learn · XGBoost</li><li>RAG pipelines</li><li>Guardrails · embeddings</li></ul></div>
+    <div class="moveset"><p class="px-label"><span class="type type--steel">BACKEND</span></p><ul><li>FastAPI</li><li>Docker</li><li>JWT (OAuth2)</li><li>SQLAlchemy · Alembic</li></ul></div>
+    <div class="moveset"><p class="px-label"><span class="type type--water">DATA</span></p><ul><li>PostgreSQL</li><li>MongoDB Atlas (Vector)</li><li>SQLite</li><li>pandas · statsmodels</li></ul></div>
   </div>
 </section>
 
-<section class="contact" id="contact" style="border-bottom:none">
-  <div class="wrap">
-    <p class="sec-label">Contact</p>
-    <h2>If your system needs to keep working when things go wrong — let's talk.</h2>
-    <div class="contact-row">
-      <a href="mailto:swapneel.bit@gmail.com">swapneel.bit@gmail.com</a>
-      <a href="https://github.com/Sw4ppleneel" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="https://www.linkedin.com/in/swapneel-premchand-b35082360/" target="_blank" rel="noopener">LinkedIn ↗</a>
+<!-- ───────────── 8 · contact ───────────── -->
+<section class="contact wrap" id="contact">
+  <header class="section-head reveal">
+    <p class="eyebrow">if your system needs to keep working when things go wrong —</p>
+    <h2 class="display contact-title">let's build something that survives<span class="dot">.</span></h2>
+  </header>
+  <div class="contact-grid reveal">
+    <div class="contact-routes">
+      <p class="px-label">direct routes</p>
+      <button class="route" type="button" id="copy-email" data-email="swapneel.bit@gmail.com">
+        <span class="route-k px-label">email</span><span class="route-v">swapneel.bit@gmail.com</span><span class="route-a px-label">copy</span>
+      </button>
+      <a class="route" href="https://github.com/Sw4ppleneel" target="_blank" rel="noopener"><span class="route-k px-label">github</span><span class="route-v">Sw4ppleneel</span><span class="route-a">↗</span></a>
+      <a class="route" href="https://www.linkedin.com/in/swapneel-premchand-b35082360/" target="_blank" rel="noopener"><span class="route-k px-label">linkedin</span><span class="route-v">Swapneel Premchand</span><span class="route-a">↗</span></a>
+      <a class="route" href="https://www.instagram.com/swapneelfr/" target="_blank" rel="noopener"><span class="route-k px-label">instagram</span><span class="route-v">@swapneelfr</span><span class="route-a">↗</span></a>
     </div>
-
-    <form id="contact-form" class="contact-form">
-      <input type="text" name="from_name" placeholder="Your name" required>
-      <input type="email" name="reply_to" placeholder="Your email" required>
-      <textarea name="message" rows="4" placeholder="What are you building, and where might it break?" required></textarea>
-      <button type="submit" id="send-btn">Send message</button>
-      <p class="form-status" id="form-status" aria-live="polite"></p>
-    </form>
+    <button class="dialog contact-start" type="button" data-open-contact>
+      <span class="px-label panel-title">▸ leave a message</span>
+      <span class="contact-start-q">Three quick steps — mostly clicking.</span>
+      <span class="contact-start-steps px-label"><span>01 you</span><span>02 about</span><span>03 note</span></span>
+      <span class="btn-px">start ▸</span>
+      <span class="dialog-more" aria-hidden="true">▼</span>
+    </button>
   </div>
 </section>
 
-<footer>
-  <div class="foot-inner">
-    <span>© 2026 <span class="owner-name" id="owner-name" title=" ">Swapneel Premchand</span> · Mohali, IN</span>
-    <span>uptime matters · <span style="color:var(--ok)">●</span> site operational</span>
-  </div>
+</main>
+
+<footer class="foot wrap">
+  <p class="px-label foot-line">© 2026 <span class="owner-name" id="owner-name" title=" ">Swapneel Premchand</span> · Plaksha University, Mohali <span class="sep">·</span> <span class="led"></span> site operational</p>
+  <canvas class="foot-walker" id="foot-walker" width="24" height="24" aria-hidden="true"></canvas>
 </footer>
 
-<script>
-(function(){
-  const demo = document.getElementById('demo');
-  const log = document.getElementById('log');
-  const statusText = document.getElementById('status-text');
-  const nodes = demo.querySelectorAll('.node[data-id]');
-  const clickable = ['api','pg','r2'];
-  const state = {api:true, pg:true, r2:true};
+<!-- ───────────── contact panel (opens from anywhere) ───────────── -->
+<div class="panel-veil" id="contact-veil" hidden></div>
+<aside class="contact-panel" id="contact-panel" role="dialog" aria-modal="true" aria-labelledby="cp-title" hidden>
+  <div class="cp-head">
+    <p class="px-label" id="cp-title">new message</p>
+    <button class="cp-x" type="button" id="cp-close" aria-label="Close">✕</button>
+  </div>
+  <form class="cp-form" id="contact-form" novalidate>
+    <ol class="cp-steps px-label" aria-hidden="true"><li class="on">01 you</li><li>02 about</li><li>03 note</li></ol>
 
-  const lines = {
-    apiDown: '<span class="t-fail">[fail]</span> API unreachable. <span class="t-warn">[fallback]</span> attendance writes queue in IndexedDB — teachers keep marking offline, background sync flushes on recovery. reads degrade; nothing is lost.',
-    pgDown: '<span class="t-fail">[fail]</span> Postgres down. <span class="t-fail">no graceful path</span> — core ERP returns errors until restore from backup. this is the failure I plan around, not route around.',
-    r2Down: '<span class="t-fail">[fail]</span> R2 unreachable. <span class="t-warn">[degraded]</span> uploads fail closed; core ERP unaffected. files never transit the app server, so the blast radius was isolated by design.',
-    healthy: '<span class="t-ok">[ok]</span> all components answering. multi-tenant, event-sourced, 4 schools in production.',
-    restored: '<span class="t-ok">[ok]</span> all components restored. offline queue flushed, audit events intact. zero data loss.'
-  };
+    <fieldset class="cp-step" data-step="1">
+      <legend class="dialog-q">Hi! What should I call you, and where do I write back?</legend>
+      <label class="field"><span class="px-label">name</span><input type="text" name="from_name" autocomplete="name" required maxlength="120"></label>
+      <label class="field"><span class="px-label">email</span><input type="email" name="reply_to" autocomplete="email" required maxlength="200"></label>
+      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cp-nav"><span></span><button class="btn-px" type="button" data-next>next ▸</button></div>
+    </fieldset>
 
-  function render(){
-    const down = clickable.filter(k=>!state[k]).length;
-    demo.classList.toggle('degraded', down>0 && state.pg);
-    demo.classList.toggle('down', !state.pg);
-    document.getElementById('f-queue').classList.toggle('on', !state.api);
-    document.getElementById('lbl-queue').style.opacity = state.api ? 0 : 1;
-    document.getElementById('e3').classList.toggle('off', !state.api);
-    document.getElementById('e4').classList.toggle('off', !state.api || !state.pg);
-    document.getElementById('e-r2').classList.toggle('off', !state.r2);
-    if(!state.pg){ statusText.textContent='DOWN — CORE ERP UNAVAILABLE'; }
-    else if(!state.api){ statusText.textContent='DEGRADED — ATTENDANCE QUEUEING OFFLINE'; }
-    else if(!state.r2){ statusText.textContent='DEGRADED — UPLOADS PAUSED'; }
-    else { statusText.textContent='ALL SYSTEMS OPERATIONAL'; }
-  }
+    <fieldset class="cp-step" data-step="2" hidden>
+      <legend class="dialog-q">What's this about? Pick any.</legend>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="topic" value="internship / full-time role"><span>internship / full-time role</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="build something together"><span>build something together</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="research collaboration"><span>research collab</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="hackathon team"><span>hackathon team</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="books, anime or guitar"><span>books, anime or guitar</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="just saying hi"><span>just saying hi</span></label>
+      </div>
+      <div class="cp-nav"><button class="link-px" type="button" data-back>◂ back</button><button class="btn-px" type="button" data-next>next ▸</button></div>
+    </fieldset>
 
-  nodes.forEach(n=>{
-    const id = n.dataset.id;
-    if(!clickable.includes(id)) return;
-    function toggle(){
-      state[id] = !state[id];
-      n.classList.toggle('dead', !state[id]);
-      if(!state[id]){
-        log.innerHTML = id==='api' ? lines.apiDown : id==='pg' ? lines.pgDown : lines.r2Down;
-      } else {
-        const anyDown = clickable.some(k=>!state[k]);
-        log.innerHTML = anyDown ? '<span class="t-ok">[ok]</span> '+id+' restored. remaining failures still active.' : lines.restored;
-      }
-      render();
-    }
-    n.addEventListener('click', toggle);
-    n.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
-  });
+    <fieldset class="cp-step" data-step="3" hidden>
+      <legend class="dialog-q">Anything else? (optional)</legend>
+      <label class="field"><span class="px-label">note</span><textarea name="note" rows="5" maxlength="4500" placeholder="What are you building — and where might it break?"></textarea></label>
+      <div class="cp-nav"><button class="link-px" type="button" data-back>◂ back</button><button class="btn-px" type="submit" id="send-btn">send ▸</button></div>
+    </fieldset>
 
-  document.getElementById('reset-btn').addEventListener('click', ()=>{
-    clickable.forEach(k=>state[k]=true);
-    nodes.forEach(n=>n.classList.remove('dead'));
-    log.innerHTML = lines.restored;
-    render();
-  });
-})();
-</script>
+    <div class="dialog cp-status" id="form-status" aria-live="polite" hidden><p></p><span class="dialog-more" aria-hidden="true">▼</span></div>
+  </form>
+</aside>
 
-<!-- Cursor trail effect -->
-<script src="cursor.js"></script>
+<!-- lightbox for the ring -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+  <button class="lb-x" type="button" id="lb-close" aria-label="Close">✕</button>
+  <button class="lb-nav lb-prev" type="button" id="lb-prev" aria-label="Previous">◂</button>
+  <figure class="lb-fig"><div class="lb-media" id="lb-media"></div><figcaption class="tape" id="lb-cap" style="--r:-1.5deg"></figcaption></figure>
+  <button class="lb-nav lb-next" type="button" id="lb-next" aria-label="Next">▸</button>
+</div>
 
-<!-- Backend API base. '' = same origin. If the inbox API runs elsewhere, set the full origin, e.g. 'https://api.swapneel.dev' -->
-<script>window.PF_API_BASE = '';</script>
+<!-- toast (dialog-box style) -->
+<div class="dialog toast" id="toast" role="status" hidden><p></p></div>
 
-<!-- Contact form: stores the message in the backend inbox AND fires the EmailJS auto-reply to the visitor -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-(function(){
-  emailjs.init('UrY-gYCg_PKD4enNm');
+<!-- domain expansion (hidden) -->
+<canvas class="void" id="void" aria-hidden="true" hidden></canvas>
+<p class="void-line" id="void-line" hidden></p>
 
-  const SERVICE  = 'service_u9mhyyf';
-  const TEMPLATE = 'template_6st5lmv';   // To Email = swapneel.bit@gmail.com; Auto-Reply tab replies to the visitor
-
-  const form = document.getElementById('contact-form');
-  const btn = document.getElementById('send-btn');
-  const status = document.getElementById('form-status');
-  function setStatus(cls, msg){ status.className = 'form-status' + (cls ? ' ' + cls : ''); status.textContent = msg; }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    setStatus('', '');
-
-    // 1) store the typed message in the backend inbox
-    const store = fetch((window.PF_API_BASE || '') + '/api/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: form.from_name.value.trim(),
-        email: form.reply_to.value.trim(),
-        message: form.message.value.trim()
-      })
-    }).then(function(r){ if(!r.ok) throw new Error('store failed'); });
-
-    // 2) keep the existing auto-reply to the visitor
-    const reply = emailjs.sendForm(SERVICE, TEMPLATE, form);
-
-    Promise.allSettled([store, reply]).then(function(res){
-      const ok = res.some(function(r){ return r.status === 'fulfilled'; });
-      if(ok){
-        setStatus('ok', "[ok] message sent — I'll get back to you.");
-        form.reset();
-      } else {
-        setStatus('err', '[fail] could not send — email me directly at swapneel.bit@gmail.com');
-      }
-      btn.disabled = false;
-      btn.textContent = 'Send message';
-    });
-  });
-})();
-</script>
-
-<!-- Owner inbox (easter egg): click the name in the footer → password login → read stored messages.
-     No password or messages live in this file; everything comes from the authenticated backend. -->
+<!-- owner inbox (unchanged behaviour) -->
 <div class="admin-overlay" id="admin-overlay" hidden>
-  <div class="admin-panel" role="dialog" aria-modal="true" aria-label="Owner inbox">
+  <div class="admin-panel dialog" role="dialog" aria-modal="true" aria-label="Owner inbox">
     <div class="admin-head">
-      <span class="admin-title mono" id="admin-title">restricted // inbox</span>
+      <span class="admin-title px-label" id="admin-title">restricted // inbox</span>
       <button class="admin-x" id="admin-close" type="button" aria-label="Close">✕</button>
     </div>
-
     <form class="admin-login" id="admin-login">
       <p class="admin-hint">Owner access only. Enter your password.</p>
       <input type="password" id="admin-pass" placeholder="password" autocomplete="current-password" aria-label="Password">
       <button type="submit" id="admin-login-btn">Unlock</button>
       <p class="admin-status" id="admin-login-status" aria-live="polite"></p>
     </form>
-
     <div class="admin-inbox" id="admin-inbox" hidden>
       <div class="admin-toolbar">
-        <span class="mono" id="inbox-count">—</span>
+        <span id="inbox-count">—</span>
         <span class="admin-toolbar-actions">
           <button class="admin-mini" id="inbox-refresh" type="button">refresh</button>
           <button class="admin-mini" id="inbox-logout" type="button">logout</button>
@@ -664,157 +480,17 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px}
   </div>
 </div>
 
-<script>
-(function(){
-  const API = function(p){ return (window.PF_API_BASE || '') + p; };
-  const TOKEN_KEY = 'pf_admin_token';
-
-  const overlay   = document.getElementById('admin-overlay');
-  const trigger   = document.getElementById('owner-name');
-  const closeBtn  = document.getElementById('admin-close');
-  const loginForm = document.getElementById('admin-login');
-  const loginView = loginForm;
-  const inboxView = document.getElementById('admin-inbox');
-  const passInput = document.getElementById('admin-pass');
-  const loginBtn  = document.getElementById('admin-login-btn');
-  const loginStat = document.getElementById('admin-login-status');
-  const listEl    = document.getElementById('admin-list');
-  const countEl   = document.getElementById('inbox-count');
-
-  let token = sessionStorage.getItem(TOKEN_KEY) || null;
-
-  function setStat(cls, msg){ loginStat.className = 'admin-status' + (cls ? ' ' + cls : ''); loginStat.textContent = msg; }
-  function showLogin(){ inboxView.hidden = true; loginView.hidden = false; setTimeout(function(){ passInput.focus(); }, 30); }
-  function showInbox(){ loginView.hidden = true; inboxView.hidden = false; }
-
-  function open(){
-    overlay.hidden = false;
-    if(token){ showInbox(); loadMessages(); } else { setStat('', ''); passInput.value=''; showLogin(); }
-  }
-  function close(){ overlay.hidden = true; }
-
-  function fmtDate(iso){
-    const d = new Date(iso);
-    if(isNaN(d)) return iso;
-    return d.toLocaleString(undefined, { dateStyle:'medium', timeStyle:'short' });
-  }
-
-  function logout(){
-    token = null;
-    sessionStorage.removeItem(TOKEN_KEY);
-    listEl.textContent = '';
-    showLogin();
-  }
-
-  // Build each message node with textContent only — a message containing HTML
-  // or <script> can never execute in the inbox view.
-  function renderMessages(items){
-    listEl.textContent = '';
-    countEl.textContent = items.length + (items.length === 1 ? ' message' : ' messages');
-    if(!items.length){
-      const empty = document.createElement('div');
-      empty.className = 'admin-empty';
-      empty.textContent = 'no messages yet.';
-      listEl.appendChild(empty);
-      return;
-    }
-    items.forEach(function(m){
-      const card = document.createElement('div');
-      card.className = 'msg' + (m.is_read ? '' : ' unread');
-
-      const top = document.createElement('div');
-      top.className = 'msg-top';
-      const from = document.createElement('span');
-      from.className = 'msg-from';
-      from.textContent = m.name;
-      const date = document.createElement('span');
-      date.className = 'msg-date';
-      date.textContent = fmtDate(m.created_at);
-      top.appendChild(from); top.appendChild(date);
-
-      const email = document.createElement('a');
-      email.className = 'msg-email';
-      email.href = 'mailto:' + m.email;
-      email.textContent = m.email;
-
-      const body = document.createElement('p');
-      body.className = 'msg-body';
-      body.textContent = m.message;
-
-      const actions = document.createElement('div');
-      actions.className = 'msg-actions';
-      if(!m.is_read){
-        const readBtn = document.createElement('button');
-        readBtn.type = 'button';
-        readBtn.textContent = 'mark read';
-        readBtn.addEventListener('click', function(){ markRead(m.id); });
-        actions.appendChild(readBtn);
-      }
-      const delBtn = document.createElement('button');
-      delBtn.type = 'button';
-      delBtn.className = 'del';
-      delBtn.textContent = 'delete';
-      delBtn.addEventListener('click', function(){ if(confirm('Delete this message?')) del(m.id); });
-      actions.appendChild(delBtn);
-
-      card.appendChild(top);
-      card.appendChild(email);
-      card.appendChild(body);
-      card.appendChild(actions);
-      listEl.appendChild(card);
-    });
-  }
-
-  function authed(path, opts){
-    opts = opts || {};
-    opts.headers = Object.assign({}, opts.headers, { 'Authorization': 'Bearer ' + token });
-    return fetch(API(path), opts).then(function(r){
-      if(r.status === 401){ logout(); throw new Error('session expired'); }
-      if(!r.ok) throw new Error('request failed');
-      return r;
-    });
-  }
-
-  function loadMessages(){
-    countEl.textContent = 'loading…';
-    authed('/api/admin/messages').then(function(r){ return r.json(); })
-      .then(renderMessages)
-      .catch(function(e){ countEl.textContent = (e.message === 'session expired') ? 'session expired' : 'could not load'; });
-  }
-  function markRead(id){ authed('/api/admin/messages/' + id + '/read', { method:'POST' }).then(loadMessages).catch(function(){}); }
-  function del(id){ authed('/api/admin/messages/' + id, { method:'DELETE' }).then(loadMessages).catch(function(){}); }
-
-  loginForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    const pw = passInput.value;
-    if(!pw) return;
-    loginBtn.disabled = true; loginBtn.textContent = 'Checking…'; setStat('', '');
-    fetch(API('/api/admin/login'), {
-      method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ password: pw })
-    }).then(function(r){
-      if(r.status === 429){ throw new Error('too many attempts — wait a few minutes'); }
-      if(r.status === 401){ throw new Error('wrong password'); }
-      if(!r.ok){ throw new Error('login unavailable'); }
-      return r.json();
-    }).then(function(data){
-      token = data.token;
-      sessionStorage.setItem(TOKEN_KEY, token);
-      passInput.value = '';
-      showInbox(); loadMessages();
-    }).catch(function(err){
-      setStat('err', '[fail] ' + err.message);
-    }).finally(function(){
-      loginBtn.disabled = false; loginBtn.textContent = 'Unlock';
-    });
-  });
-
-  trigger.addEventListener('click', open);
-  closeBtn.addEventListener('click', close);
-  document.getElementById('inbox-refresh').addEventListener('click', loadMessages);
-  document.getElementById('inbox-logout').addEventListener('click', logout);
-  overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !overlay.hidden) close(); });
-})();
-</script>
+<script>window.PF_API_BASE = '';</script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="assets/js/pixel.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/topo.js"></script>
+<script src="assets/js/inventory.js"></script>
+<script src="assets/js/gallery.js"></script>
+<script src="assets/js/contact.js"></script>
+<script src="assets/js/cursor.js"></script>
+<script src="assets/js/void.js"></script>
+<script src="assets/js/admin.js"></script>
 </body>
 </html>
