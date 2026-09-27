@@ -22,7 +22,7 @@ typography.
 ## Who he is (source of truth, carried over from the current site)
 
 - Swapneel Premchand · CS + AI @ Plaksha University · Mohali, IN
-- **Founder, Tulips.edu**: multi-tenant school ERP, 4 paying schools, self-hosted, and he takes the
+- **Founder, Tulips.edu**: multi-tenant school ERP, live in 3 schools (confirmed by him; LinkedIn agrees), self-hosted, and he takes the
   2 a.m. pages himself.
 - **Research Assistant** with Prof. Anuj Kapoor (University of Missouri): causal inference on a
   digital-physiotherapy platform, covering staggered DiD, causal ML and provider-exit shocks.
@@ -137,7 +137,7 @@ nothing.
   ABILITY: Unfazed (battle-tested) · HIDDEN ABILITY: 2 a.m. Pager`
   Dex text: *"Often found at night, building systems that refuse to fall over. Carries a guitar.
   Has never once lost to a bug for long."* (a nod to his "I always win" tape).
-  Below it, **base-stat bars** carrying the real proof points: *4 schools in prod · 1st / 450 ·
+  Below it, **base-stat bars** carrying the real proof points: *3 schools in prod · 1st / 450 ·
   2nd / 30 · 2 yrs on call*.
 
 **3 · Work: the main event, and the biggest section.** Tech comes first, so this is where most of

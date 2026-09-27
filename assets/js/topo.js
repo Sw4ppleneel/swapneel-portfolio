@@ -15,7 +15,7 @@
     apiDown: '<span class="t-fail">[fail]</span> API unreachable. <span class="t-warn">[fallback]</span> attendance writes queue in IndexedDB — teachers keep marking offline, background sync flushes on recovery. reads degrade; nothing is lost.',
     pgDown: '<span class="t-fail">[fail]</span> Postgres down. <span class="t-fail">no fallback</span> — core ERP returns errors until restore from backup. this is the failure I plan around, not route around.',
     r2Down: '<span class="t-fail">[fail]</span> R2 unreachable. <span class="t-warn">[degraded]</span> uploads fail closed; core ERP unaffected. files never transit the app server, so the blast radius was isolated by design.',
-    healthy: '<span class="t-ok">[ok]</span> all components answering. multi-tenant, event-sourced, 4 schools in production.',
+    healthy: '<span class="t-ok">[ok]</span> all components answering. multi-tenant, event-sourced, 3 schools in production.',
     restored: '<span class="t-ok">[ok]</span> all components restored. offline queue flushed, audit events intact. zero data loss.'
   };
 

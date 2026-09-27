@@ -208,6 +208,11 @@ section{scroll-margin-top:70px}
 .type--water{background:#2F9BB5}
 .type--fire{background:#E0622A}
 .type--dark{background:#3B3350}
+.dex-caught{margin-top:10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;color:#9ec79a}
+.dex-caught .px-label{font-size:17px}
+.dex-caught b{font-family:var(--f-px);font-weight:400;font-size:30px;line-height:1;color:#eaffe4}
+.dex-caught b::before{content:"";display:inline-block;width:8px;height:8px;margin-right:6px;vertical-align:4px;background:#eaffe4;box-shadow:0 0 0 2px #1c2a1f, 0 0 0 3px #9ec79a}
+.dex-caught-sub{flex-basis:100%;font-family:var(--f-px);font-size:15px;text-transform:uppercase;color:#7fa37b}
 .dex-facts{margin:14px 0 0;color:#ffe3e7;font-size:18px;display:grid;gap:3px}
 .dex-facts div{display:flex;justify-content:space-between;gap:12px;border-bottom:2px dotted rgba(255,255,255,.2);padding-bottom:3px}
 .dex-facts dt{color:#ffb9c3}
