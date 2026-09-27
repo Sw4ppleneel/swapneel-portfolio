@@ -121,7 +121,7 @@ nothing.
   modes are what interest him. (*strength & kindness* was cut at his request: it was repeating.)
 - Right, pixel: **his own Pokédex entry** in a red handheld-dex frame.
   `No.001 SWAPNEEL · the Wandering Engineer · TYPE: TECH / PSYCHIC ·
-  ABILITY: Graceful Degradation · HIDDEN ABILITY: 2 a.m. Pager`
+  ABILITY: Unfazed (battle-tested) · HIDDEN ABILITY: 2 a.m. Pager`
   Dex text: *"Often found at night, building systems that refuse to fall over. Carries a guitar.
   Has never once lost to a bug for long."* (a nod to his "I always win" tape).
   Below it, **base-stat bars** carrying the real proof points: *4 schools in prod · 1st / 450 ·
@@ -136,7 +136,7 @@ the effort goes.
 - Keep the **"Failure-mode thinking"** block for each project. It's the differentiator.
 - **Rebuild the Tulips topology demo in pixel art**: tiny pixel servers (API, Postgres, R2). Click
   one to knock it out and it sparks, goes dark, and the pixel log reports what really happens (same
-  copy as today, including the "no graceful path" honesty).
+  copy as today, including the "no fallback" honesty).
 
 **4 · Research.** A quieter spread for the causal inference work: identification, causal ML and
 sequence models. Moon-silver accent. It should read like a paper abstract, credible and calm.

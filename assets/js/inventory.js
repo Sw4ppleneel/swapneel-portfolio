@@ -131,7 +131,7 @@
   }
   const lines = [
     'A wild BUG appeared in prod!',
-    'SWAPNEEL used GRACEFUL DEGRADATION!',
+    'SWAPNEEL is UNFAZED. Battle-tested.',
     "It's super effective. Uptime held."
   ];
   let dsRun = 0;

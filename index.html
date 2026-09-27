@@ -103,11 +103,11 @@
       </div>
     </div>
     <dl class="dex-facts px-label">
-      <div><dt>ability</dt><dd>Graceful Degradation</dd></div>
+      <div><dt>ability</dt><dd>Unfazed</dd></div>
       <div><dt>hidden ability</dt><dd>2 a.m. Pager</dd></div>
       <div><dt>habitat</dt><dd>terminals, mountain roads</dd></div>
     </dl>
-    <p class="dex-entry">Often found at night, building systems that refuse to fall over. Carries a guitar. Has never lost to a bug for long.</p>
+    <p class="dex-entry">Battle-tested and unfazed — stays calm when prod is on fire. Often found at night, carrying a guitar. Has never lost to a bug for long.</p>
     <ul class="dex-stats" aria-label="Base stats">
       <li><span class="px-label">schools in prod</span><b style="--v:.8"></b><em>4</em></li>
       <li><span class="px-label">hack-n-win 3.0</span><b style="--v:1"></b><em>1st / 450</em></li>
@@ -161,7 +161,7 @@
     </div>
     <div class="dialog topo-log" aria-live="polite"><p id="topo-log"></p><span class="dialog-more" aria-hidden="true">▼</span></div>
     <div class="topo-foot">
-      <p class="topo-hint">Knock out <b>api</b>, <b>postgres</b> or <b>r2</b>. The log says what actually happens in production — including the one failure with no graceful path.</p>
+      <p class="topo-hint">Knock out <b>api</b>, <b>postgres</b> or <b>r2</b>. The log says what actually happens in production — including the one failure with no fallback.</p>
       <button class="link-px" type="button" id="topo-reset">restore all</button>
     </div>
   </figure>
@@ -199,7 +199,7 @@
       <p>Multimodal pipeline for brain-tumour progression analysis: a Temporal Cognition Engine runs delta analysis across longitudinal MRI scans, and a RAG layer (MongoDB Atlas + Gemini 2.5 Flash) generates therapy reports. Ingestion is automated with multi-agent validation. Took first place out of 450+ teams — and second for best use of MongoDB.</p>
       <div class="failure">
         <p class="px-label failure-title">failure-mode thinking</p>
-        <p>Graceful degradation built in: if the vector layer fails, the system falls back to preserved deterministic paths instead of returning nothing — in a medical context, silence is harm.</p>
+        <p>Built to fail soft: if the vector layer fails, the system falls back to preserved deterministic paths instead of returning nothing — in a medical context, silence is harm.</p>
       </div>
       <ul class="tags px-label"><li>PyTorch</li><li>MongoDB Atlas</li><li>Gemini 2.5 Flash</li><li>RAG</li><li>Multi-agent</li></ul>
       <a class="link-px" href="https://github.com/ReservedSnow673/AsclepiusAI" target="_blank" rel="noopener">github ↗</a>
@@ -301,21 +301,24 @@
           <div class="ds-hinge" aria-hidden="true"></div>
           <div class="ds-screen ds-screen--bottom"><p class="ds-text" id="ds-text"></p></div>
         </div>
-        <p class="px-label shelf-more-title">save file</p>
-        <ul class="saves">
-          <li><b>BGMI</b><span>my night-gaming love</span></li>
-          <li><b>Age of Mythology</b><span>greek myth &amp; philosophy, my weakness</span></li>
-          <li><b>The Witcher series</b></li>
-          <li><b>Prince of Persia</b></li>
-          <li><b>NFS Most Wanted</b></li>
-          <li><b>GTA series</b></li>
-          <li><b>Project IGI</b></li>
-          <li><b>Road Rash</b></li>
-          <li><b>CS:GO</b></li>
-          <li><b>Clash games</b></li>
-          <li><b>Brawl Stars</b></li>
-          <li><b>Pokémon</b><span>since the DS days</span></li>
-        </ul>
+        <p class="panel-note">A Poké-nerd since the DS days — the game that taught me what grinding, patience and type matchups have to do with engineering.</p>
+        <details class="saves-box">
+          <summary class="px-label">open the save file <span class="saves-n">(12 games)</span></summary>
+          <ul class="saves">
+            <li><b>BGMI</b><span>my night-gaming love</span></li>
+            <li><b>Age of Mythology</b><span>greek myth &amp; philosophy, my weakness</span></li>
+            <li><b>The Witcher series</b></li>
+            <li><b>Prince of Persia</b></li>
+            <li><b>NFS Most Wanted</b></li>
+            <li><b>GTA series</b></li>
+            <li><b>Project IGI</b></li>
+            <li><b>Road Rash</b></li>
+            <li><b>CS:GO</b></li>
+            <li><b>Call of Duty</b></li>
+            <li><b>Clash games</b></li>
+            <li><b>Brawl Stars</b></li>
+          </ul>
+        </details>
       </div>
       <div class="dialog inv-panel" role="tabpanel" data-panel="anime" hidden>
         <p class="px-label panel-title">▸ watchlist</p>
