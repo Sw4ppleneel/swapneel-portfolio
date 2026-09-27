@@ -28,6 +28,7 @@
   <nav class="nav-links" aria-label="Sections">
     <a href="#work">work</a>
     <a href="#research">research</a>
+    <a href="#guilds">guilds</a>
     <a href="#off-clock">off the clock</a>
     <a href="#pictures">pictures</a>
   </nav>
@@ -45,7 +46,7 @@
   <div class="hero-shade" aria-hidden="true"></div>
 
   <div class="hero-copy">
-    <p class="px-label hero-kicker">▸ CS + AI @ Plaksha University · Founder, Tulips.edu</p>
+    <p class="px-label hero-kicker">▸ Founder, Tulips.edu · AI &amp; Backend Engineer · CS + AI @ Plaksha</p>
     <h1 class="hero-name">Swapneel<span class="dot">.</span></h1>
     <p class="hero-line">builds systems for when things <em>break</em> — not just when they work.</p>
 
@@ -63,7 +64,7 @@
   </div>
 
   <p class="hero-status px-label" aria-label="Status">
-    <span class="led"></span><span>4 schools in production</span><span class="sep">·</span><span class="more">causal inference RA</span><span class="sep">·</span><span class="more">AWS campus leader</span>
+    <span class="led"></span><span>4 schools in production</span><span class="sep">·</span><span class="more">sole engineer @ flyback</span><span class="sep">·</span><span class="more">300+ students onboarded to AWS</span>
   </p>
   <a class="hero-scroll px-label" href="#about">scroll to wander <span aria-hidden="true">▼</span></a>
 </section>
@@ -75,14 +76,18 @@
     <h2 class="display">dum spiro, spero<span class="dot">.</span></h2>
     <p class="lede">I'm Swapneel — a CS + AI student at Plaksha University who ended up running production software before finishing college. I founded <strong>Tulips.edu</strong>, a school ERP that four schools pay for, and I'm the one who gets the 2&nbsp;a.m. page when something breaks.</p>
     <p>That changed how I build. Demos run on the happy path; the real world doesn't. So I design for the failure first — offline queues, fallbacks, guardrails, confidence scores instead of confident guesses.</p>
-    <p>Away from the terminal I wander: mountains when I can reach them, books when I can't. I write poems and short stories, play guitar, and I've been a Poké-nerd since the DS days.</p>
+    <p>Away from the terminal I wander: mountains when I can reach them, books when I can't. I write poems and short stories, debate philosophy, look up at the stars more than is reasonable, am learning guitar, and I've been a Poké-nerd since the DS days.</p>
 
     <div class="now">
       <p class="px-label now-title">now —</p>
       <ul>
-        <li><span class="px-label">founder</span> Tulips.edu · 4 paying schools, I own uptime, backups and the pager</li>
-        <li><span class="px-label">research</span> RA with Prof. Anuj Kapoor (Univ. of Missouri) · causal inference on care continuity</li>
-        <li><span class="px-label">from aug '26</span> AWS Student Builder Campus Leader · 2026 Global University Program</li>
+        <li><span class="px-label">founder</span> Tulips.edu · since Jun '26 · I own uptime, backups, onboarding and the pager</li>
+        <li><span class="px-label">flyback</span> Founder's Office · since Aug '26 · sole engineer on the platform and staff CRM</li>
+      </ul>
+      <p class="px-label now-title now-title--past">recently —</p>
+      <ul>
+        <li><span class="px-label">aws</span> Campus Ambassador · Aug–Sep '26 · onboarded 300+ students to AWS Builder</li>
+        <li><span class="px-label">research</span> RA with Prof. Anuj Kapoor (Univ. of Missouri) · May–Aug '26 · causal inference</li>
       </ul>
     </div>
   </div>
@@ -112,7 +117,7 @@
       <li><span class="px-label">schools in prod</span><b style="--v:.8"></b><em>4</em></li>
       <li><span class="px-label">hack-n-win 3.0</span><b style="--v:1"></b><em>1st / 450</em></li>
       <li><span class="px-label">plaksha medithon</span><b style="--v:.9"></b><em>2nd</em></li>
-      <li><span class="px-label">years on call</span><b style="--v:.55"></b><em>2</em></li>
+      <li><span class="px-label">aws students</span><b style="--v:.75"></b><em>300+</em></li>
     </ul>
   </aside>
 </section>
@@ -167,9 +172,29 @@
   </figure>
 
   <!-- PRJ 02 -->
-  <article class="project reveal" aria-labelledby="p2">
+  <article class="project reveal" aria-labelledby="p-fb">
     <div class="project-side">
       <p class="px-label">PRJ—02</p>
+      <canvas class="project-icon" data-icon="plane" width="32" height="32" aria-hidden="true"></canvas>
+      <p class="tape tape--sm" style="--r:1deg">sole engineer · now</p>
+    </div>
+    <div class="project-body">
+      <h3 class="project-name" id="p-fb">Flyback</h3>
+      <p class="project-pitch">Founder's Office · recruiting platform matching overseas Indian professionals with high-growth Indian teams</p>
+      <p>The only engineer on the team, leading architecture and infrastructure. Rebuilt the production platform and the staff CRM from scratch, and built the sourcing side: custom scrapers and ATS ingestion pipelines that keep the candidate pool fed automatically.</p>
+      <div class="failure">
+        <p class="px-label failure-title">failure-mode thinking</p>
+        <p>Matching runs in two passes because either one alone fails: a deterministic arithmetic role matcher is precise but brittle, semantic ranking is flexible but drifts. Human-in-the-loop validation queues sit on top, so the taxonomy doesn't quietly rot.</p>
+      </div>
+      <ul class="tags px-label"><li>Full-stack rebuild</li><li>Hybrid matching</li><li>Semantic ranking</li><li>Human-in-the-loop</li><li>Scrapers · ATS ingestion</li></ul>
+      <a class="link-px" href="https://flyback.in" target="_blank" rel="noopener">visit flyback.in ↗</a>
+    </div>
+  </article>
+
+  <!-- PRJ 03 -->
+  <article class="project reveal" aria-labelledby="p2">
+    <div class="project-side">
+      <p class="px-label">PRJ—03</p>
       <canvas class="project-icon" data-icon="lens" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:1.5deg">open source</p>
     </div>
@@ -186,10 +211,10 @@
     </div>
   </article>
 
-  <!-- PRJ 03 -->
+  <!-- PRJ 04 -->
   <article class="project reveal" aria-labelledby="p3">
     <div class="project-side">
-      <p class="px-label">PRJ—03</p>
+      <p class="px-label">PRJ—04</p>
       <canvas class="project-icon" data-icon="brain" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:-1deg">1st / 450+ teams</p>
     </div>
@@ -206,10 +231,10 @@
     </div>
   </article>
 
-  <!-- PRJ 04 -->
+  <!-- PRJ 05 -->
   <article class="project reveal" aria-labelledby="p4">
     <div class="project-side">
-      <p class="px-label">PRJ—04</p>
+      <p class="px-label">PRJ—05</p>
       <canvas class="project-icon" data-icon="pill" width="32" height="32" aria-hidden="true"></canvas>
       <p class="tape tape--sm" style="--r:2deg">1st runner-up</p>
     </div>
@@ -230,7 +255,7 @@
 <!-- ───────────── 4 · research ───────────── -->
 <section class="research wrap" id="research">
   <header class="section-head reveal">
-    <p class="eyebrow">causal inference on real-world health data</p>
+    <p class="eyebrow">causal inference on real-world health data · May – Aug '26</p>
     <h2 class="display">research<span class="dot">.</span></h2>
   </header>
   <div class="research-grid reveal">
@@ -245,6 +270,57 @@
       <div><dt class="px-label">causal ml</dt><dd>Double/debiased ML, causal forests, R-/DR-learners for heterogeneous effects across patient fragility.</dd></div>
       <div><dt class="px-label">sequence models</dt><dd>Transformer encoders over care trajectories, counterfactual RNNs, representation balancing (TARNet/CFRNet).</dd></div>
     </dl>
+  </div>
+</section>
+
+<!-- ───────────── 4b · guilds (clubs & community) ───────────── -->
+<section class="guilds wrap" id="guilds">
+  <header class="section-head reveal">
+    <p class="eyebrow">clubs &amp; community — where the hackathons get built</p>
+    <h2 class="display">guilds joined<span class="dot">.</span></h2>
+  </header>
+  <div class="guild-grid reveal">
+    <article class="guild">
+      <p class="guild-top"><span class="type type--fire">LEAD</span><span class="px-label guild-when">feb '26 — now</span></p>
+      <h3 class="guild-name">Geek Room Plaksha</h3>
+      <p class="guild-role">Technical Lead</p>
+      <ul>
+        <li>Organising events, hackathons and the college fest.</li>
+        <li><b>Prayas</b> — inter-university tech fest, technical lead.</li>
+        <li><b>Colossus</b> — intra-college tech fest.</li>
+        <li><b>Trackshift '26</b> — built the website for Mphasis' Trackshift.</li>
+      </ul>
+      <a class="link-px" href="https://trackshift-lovat.vercel.app/" target="_blank" rel="noopener">see the trackshift site ↗</a>
+    </article>
+    <article class="guild">
+      <p class="guild-top"><span class="type type--psy">AI</span><span class="px-label guild-when">feb '26 — now</span></p>
+      <h3 class="guild-name">LEAP — AI@Plaksha</h3>
+      <p class="guild-role">Technical Member</p>
+      <ul>
+        <li>AI research on <b>OLM (Open Language Model)</b> — an open-source PyTorch library for training language models.</li>
+        <li>Contributed to OLM's LLM gallery: the ready-made model presets (GPT-2, Llama, Qwen, Phi, Gemma and more).</li>
+        <li>Organised events on campus.</li>
+      </ul>
+      <a class="link-px" href="https://openlanguagemodel.github.io/openlanguagemodel/" target="_blank" rel="noopener">openlanguagemodel ↗</a>
+    </article>
+    <article class="guild">
+      <p class="guild-top"><span class="type type--dark">SEC</span><span class="px-label guild-when">aug '25 — now</span></p>
+      <h3 class="guild-name">Cyber Defense Club</h3>
+      <p class="guild-role">Technical Member · Plaksha University</p>
+      <ul>
+        <li><b>DaVinci Node</b> at Colossus — an AI-jailbreaking event.</li>
+        <li><b>Capture the Flag</b> — ran workshops on CTF techniques and cybersecurity ideals, twice.</li>
+        <li>Organising events, workshops and fests.</li>
+      </ul>
+    </article>
+    <article class="guild">
+      <p class="guild-top"><span class="type type--water">GDG</span><span class="px-label guild-when">dec '25 — now</span></p>
+      <h3 class="guild-name">Google Developer Group Ranchi</h3>
+      <p class="guild-role">Community Member</p>
+      <ul>
+        <li>Part of the local developer ecosystem back home — workshops and meetups on AI, ML and backend development.</li>
+      </ul>
+    </article>
   </div>
 </section>
 
@@ -292,7 +368,7 @@
           <canvas class="strat-body" id="strat-body" width="96" height="36" aria-hidden="true"></canvas>
           <div class="strings" id="strings"></div>
         </div>
-        <p class="panel-note">Hover or tap across the strings. It's an open G — the chord most of my songs start on.</p>
+        <p class="panel-note">Hover or tap across the strings. It's an open G — still learning, and it's where every practice session starts.</p>
       </div>
       <div class="dialog inv-panel" role="tabpanel" data-panel="games" hidden>
         <p class="px-label panel-title">▸ player 1</p>
@@ -366,6 +442,16 @@
     <div class="moveset"><p class="px-label"><span class="type type--steel">BACKEND</span></p><ul><li>FastAPI</li><li>Docker</li><li>JWT (OAuth2)</li><li>SQLAlchemy · Alembic</li></ul></div>
     <div class="moveset"><p class="px-label"><span class="type type--water">DATA</span></p><ul><li>PostgreSQL</li><li>MongoDB Atlas (Vector)</li><li>SQLite</li><li>pandas · statsmodels</li></ul></div>
   </div>
+  <div class="badges reveal">
+    <p class="px-label badges-title">badges earned</p>
+    <ul>
+      <li><i aria-hidden="true"></i>Systems Design — high-level architecture</li>
+      <li><i aria-hidden="true"></i>Building AI Agents with MongoDB</li>
+      <li><i aria-hidden="true"></i>Microsoft: Fundamentals of AI Security</li>
+      <li><i aria-hidden="true"></i>Data Fundamentals</li>
+      <li><i aria-hidden="true"></i>Artificial Intelligence Fundamentals</li>
+    </ul>
+  </div>
 </section>
 
 <!-- ───────────── 8 · contact ───────────── -->
@@ -397,7 +483,7 @@
 </main>
 
 <footer class="foot wrap">
-  <p class="px-label foot-line">© 2026 <span class="owner-name" id="owner-name" title=" ">Swapneel Premchand</span> · Plaksha University, Mohali <span class="sep">·</span> <span class="led"></span> site operational</p>
+  <p class="px-label foot-line">© 2026 <span class="owner-name" id="owner-name" title=" ">Swapneel Premchand</span> · Ranchi · Plaksha University, Mohali <span class="sep">·</span> <span class="led"></span> site operational</p>
   <canvas class="foot-walker" id="foot-walker" width="24" height="24" aria-hidden="true"></canvas>
 </footer>
 

@@ -183,6 +183,7 @@ section{scroll-margin-top:70px}
 .lede{font-size:1.14em}
 .now{margin-top:42px;border-top:1px dashed rgba(236,228,210,.25);padding-top:18px}
 .now-title{color:var(--ember);margin-bottom:8px}
+.now-title--past{color:var(--mute);margin-top:20px}
 .now ul{list-style:none;display:grid;gap:10px}
 .now li{display:grid;grid-template-columns:130px 1fr;gap:14px;font-size:.95em;color:var(--moon)}
 .now li .px-label{color:var(--sky);padding-top:3px}
@@ -205,6 +206,8 @@ section{scroll-margin-top:70px}
 .type--psy{background:#D8457E}
 .type--steel{background:#6C7A92}
 .type--water{background:#2F9BB5}
+.type--fire{background:#E0622A}
+.type--dark{background:#3B3350}
 .dex-facts{margin:14px 0 0;color:#ffe3e7;font-size:18px;display:grid;gap:3px}
 .dex-facts div{display:flex;justify-content:space-between;gap:12px;border-bottom:2px dotted rgba(255,255,255,.2);padding-bottom:3px}
 .dex-facts dt{color:#ffb9c3}
@@ -275,6 +278,21 @@ section{scroll-margin-top:70px}
 .methods{display:grid;gap:22px;align-content:start}
 .methods dt{color:var(--sky);margin-bottom:4px}
 .methods dd{color:var(--moon)}
+
+/* ─── guilds ─── */
+.guilds{padding-top:clamp(60px,8vw,110px);padding-bottom:clamp(60px,8vw,110px)}
+.guild-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.guild{padding:22px 24px;background:var(--night-2);border:3px solid rgba(236,228,210,.2);display:flex;flex-direction:column;gap:8px;transition:border-color .2s, transform .15s steps(2)}
+.guild:hover{border-color:var(--paper);transform:translateY(-3px)}
+.guild-top{display:flex;justify-content:space-between;align-items:center}
+.guild-when{color:var(--mute);font-size:18px}
+.guild-name{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,2.6vw,36px);line-height:1.05;color:#fff;margin-top:4px}
+.guild-role{font-style:italic;color:var(--mute)}
+.guild ul{list-style:none;display:grid;gap:6px;margin:6px 0 4px;font-size:.93em;color:var(--moon)}
+.guild li{padding-left:18px;position:relative}
+.guild li::before{content:"▸";position:absolute;left:0;color:var(--ember);font-family:var(--f-px)}
+.guild b{font-weight:500;color:#fff}
+.guild .link-px{margin-top:auto;align-self:flex-start;font-size:20px}
 
 /* ─── off the clock ─── */
 .offclock{padding-top:clamp(60px,8vw,110px);padding-bottom:clamp(80px,10vw,140px)}
@@ -385,6 +403,11 @@ section{scroll-margin-top:70px}
 .moveset{padding:18px;background:var(--night-2);border:3px solid rgba(236,228,210,.2)}
 .moveset ul{list-style:none;margin-top:12px;display:grid;gap:6px}
 .moveset li{font-family:var(--f-px);font-size:21px;color:var(--moon);display:flex;justify-content:space-between;border-bottom:2px dotted rgba(236,228,210,.14);padding-bottom:3px}
+.badges{margin-top:26px;padding:18px 20px;border:3px dashed rgba(236,228,210,.2)}
+.badges-title{color:var(--mute);margin-bottom:12px}
+.badges ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 22px}
+.badges li{display:flex;align-items:center;gap:10px;font-size:.92em;color:var(--moon)}
+.badges i{width:14px;height:14px;background:var(--ember);box-shadow:inset -3px -3px 0 var(--ember-deep), inset 3px 3px 0 #ffb27d;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);flex:none}
 .moveset li::after{content:"PP ∞";color:var(--night-3);font-size:16px;padding-top:3px}
 
 /* ─── contact ─── */
@@ -486,6 +509,7 @@ section{scroll-margin-top:70px}
   .about,.research-grid,.inv,.contact-grid{grid-template-columns:minmax(0,1fr)}
   .dex{position:relative;top:0;max-width:460px}
   .moves{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .guild-grid{grid-template-columns:minmax(0,1fr)}
   .project{grid-template-columns:minmax(0,1fr)}
   .project-side{flex-direction:row;align-items:center;flex-wrap:wrap}
   .project-icon{width:64px;height:64px}

@@ -56,6 +56,19 @@ typography.
   *strength and kindness* mentality: be the strongest in the room and use it to look after people.
   That is also exactly how he talks about reliability, so it's the emotional core of the site.
 
+## Update from his LinkedIn export (Sep 2026)
+
+- Current roles: Founder, Tulips.edu (since Jun '26); Founder's Office Intern at Flyback (since Aug '26),
+  where he's the sole engineer (platform + CRM rebuild, a two-pass hybrid matcher with human-in-the-loop
+  review, scrapers and ATS ingestion). Flyback is now PRJ—02.
+- Past roles: RA with Prof. Kapoor (May–Aug '26), AWS Campus Ambassador (Aug–Sep '26, 300+ students).
+- Certifications appear as "badges earned" under moves learned.
+- **Guilds joined** (clubs), from 4b onwards:
+  - Geek Room Plaksha, Technical Lead: Prayas, Colossus, the Trackshift '26 site.
+  - LEAP AI@Plaksha: OLM research, the LLM gallery.
+  - Cyber Defense Club: DaVinci Node AI jailbreaking, CTF workshops ×2.
+  - GDG Ranchi.
+
 ## The visual language: three voices, each with one job
 
 The moodboard is a **collage on deep midnight navy**. Cream paper strips carry typewriter text,
